@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi Pembelajaran — TEI CLASS X</title>
+  <meta name="description" content="10 Modul Pembelajaran Dasar Teknik Elektronika Industri (TEI) SMK Kelas 10. Dilengkapi 4 mode belajar, generator rangkaian boolean (AB+CD)E, solder lab, dan simulator logika.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="TEI CLASS X Beranda">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 6h2v2H4V6zm0 5h2v2H4v-2zm0 5h2v2H4v-2zm14-10h2v2h-2V6zm0 5h2v2h-2v-2zm0 5h2v2h-2v-2zM6 4h2v2H6V4zm5 0h2v2h-2V4zm5 0h2v2h-2V4zM6 18h2v2H6v-2zm5 0h2v2h-2v-2zm5 0h2v2h-2v-2zM8 8h8v8H8V8z"/></svg>
+        </div>
+        <div class="brand-text">TEI <span>CLASS X</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link">Beranda</a></li>
+          <li><a href="materi.html" class="nav-link active">Materi</a></li>
+          <li><a href="praktik.html" class="nav-link">Praktik</a></li>
+          <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+          <li><a href="tentang.html" class="nav-link">Tentang</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-extra">
+        <div class="nav-progress-badge">
+          <span class="nav-progress-circle"></span>
+          <span id="nav-progress-text">0% Selesai</span>
+        </div>
+        <button class="hamburger" id="hamburger-btn" aria-label="Buka Menu" aria-expanded="false">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main>
+    <div class="container">
+      
+      <!-- PAGE TITLE & INTRO -->
+      <div class="section-header" style="margin-bottom: 2.5rem;">
+        <span class="section-tag">Kurikulum Inti Vokasi</span>
+        <h1 class="section-title">Modul Teori Elektronika Industri</h1>
+        <p class="section-desc">
+          Pelajari 10 materi fundamental secara bertahap. Gunakan tab <strong>Ringkasan</strong>, <strong>Penjelasan Lengkap</strong>, <strong>Contoh & Simulator</strong>, dan <strong>Latihan Mandiri</strong> pada masing-masing materi.
+        </p>
+      </div>
+
+      <!-- SEARCH BAR -->
+      <div class="search-container">
+        <div class="search-input-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" id="materi-search-input" class="search-input" placeholder="Cari topik materi (contoh: resistor, Hukum Ohm, Arduino, transistor, K3, PLC, gerbang)...">
+          <button type="button" id="search-clear-btn" class="search-clear-btn" title="Hapus pencarian">&times;</button>
+        </div>
+      </div>
+
+      <div id="search-empty-state" style="display: none; text-align: center; padding: 2.5rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px dashed var(--border-color); margin-bottom: 2rem;">
+        <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 0.5rem;">Tidak ditemukan materi yang cocok dengan pencarian Anda.</p>
+        <span style="font-size: 0.85rem; color: var(--text-dim);">Coba kata kunci lain: <em>Ohm</em>, <em>Kapasitor</em>, <em>Solder</em>, <em>Gerbang</em>, <em>Relay</em>.</span>
+      </div>
+
+      <!-- MATERI CONTAINER LIST -->
+      <div class="materi-list">
+
+        <!-- ==================== MATERI 1 ==================== -->
+        <article class="materi-card" id="materi-1" data-keywords="pengenalan tei elektronika industri k3 keselamatan kerja alat bahan obeng tang multimeter solder esd">
+          <div class="materi-header">
+            <div class="materi-header-left">
+              <span class="materi-badge-num">MODUL 01</span>
+              <div>
+                <h2 class="materi-header-title">Pengenalan Teknik Elektronika Industri & K3</h2>
+                <span class="badge badge-orange materi-status-badge" data-target="materi-1">Belum Selesai</span>
+              </div>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-orange materi-toggle-btn" data-materi-id="materi-1">
+              Tandai Selesai
+            </button>
+          </div>
+
+          <div class="mode-tabs">
+            <button type="button" class="mode-tab active" data-tab="ringkasan">📑 Ringkasan</button>
+            <button type="button" class="mode-tab" data-tab="lengkap">📖 Penjelasan Lengkap</button>
+            <button type="button" class="mode-tab" data-tab="contoh">💡 Contoh & Kasus</button>
+            <button type="button" class="mode-tab" data-tab="latihan">✍️ Latihan Mandiri</button>
+          </div>
+
+          <div class="materi-body">
+            <div class="tab-pane active" data-pane="ringkasan">
+              <ul style="line-height: 1.8;">
+                <li><strong>Elektronika:</strong> Ilmu yang mempelajari pengendalian partikel elektron bermuatan di dalam ruang hampa, gas, atau bahan semikonduktor.</li>
+                <li><strong>Elektronika Industri:</strong> Penerapan teknologi elektronika pada sistem manufaktur, instrumen kendali, sensor, dan konversi daya pabrik.</li>
+                <li><strong>Ruang Lingkup TEI:</strong> Sistem Otomasi Manufaktur, Instrumentasi & Sensor, Mikrokontroler/PLC, Robotika Industri, serta Panel Tenaga Listrik.</li>
+                <li><strong>K3 Bengkel Elektronika:</strong> Standar APD (kacamata pengaman, sepatu safety berisolasi), pencegahan ESD (listrik statis), tata kelola bengkel 5S (5R), dan ventilasi hisap asap solder.</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane" data-pane="lengkap">
+              <h4>1. Pengertian Elektronika dan Elektronika Industri</h4>
+              <p>
+                Elektronika adalah cabang fisika terapan dan teknik elektro yang memanfaatkan pergerakan elektron bebas melalui bahan semikonduktor (silikon dan germanium). Berbeda dengan kelistrikan arus kuat yang berfokus pada transmisi daya listrik besar (pembangkitan megawatt), elektronika berfokus pada pemrosesan sinyal informasi dan manipulasi tegangan/arus dengan presisi tinggi.
+              </p>
+              <p>
+                <strong>Teknik Elektronika Industri (TEI)</strong> mengkhususkan integrasi perangkat elektronika daya dan kontrol logika untuk menjalankan mesin-mesin industri secara otomatis, aman, dan efisien tinggi.
+              </p>
+
+              <h4>2. Ruang Lingkup Keahlian TEI</h4>
+              <ul>
+                <li><strong>Sistem Kendali Logika Terprogram (PLC):</strong> Otomasi jalur perakitan produk manufaktur otomotif, makanan, dan farmasi.</li>
+                <li><strong>Sensorika & Transduser:</strong> Pengukuran suhu, tekanan fluida, deteksi objek logam/non-logam secara nirsentuh.</li>
+                <li><strong>Aktuator & Penggerak Motor:</strong> Inverter VFD (Variable Frequency Drive), motor servo presisi, dan selenoid pneumatik.</li>
+                <li><strong>Sistem Mikrokontroler & IoT:</strong> Pemantauan kondisi mesin jarak jauh (Condition Monitoring).</li>
+              </ul>
+
+              <h4>3. Kesehatan & Keselamatan Kerja (K3) Elektronika</h4>
+              <div class="callout callout-warning">
+                <div class="callout-title">Aturan Keselamatan Bengkel TEI:</div>
+                <ol style="margin-bottom: 0; padding-left: 1.2rem;">
+                  <li>Selalu matikan saklar sumber tegangan (LOTO - Lockout/Tagout) sebelum mengubah rangkaian perkabelan.</li>
+                  <li>Gunakan gelang antistatis (antistatic ESD wristband) saat memegang komponen IC CMOS atau prosesor sensitif.</li>
+                  <li>Jangan sekali-kali menyentuh ujung mata solder (temperatur mencapai 300°C - 400°C) atau menghirup uap timah tanpa penyedot (fume extractor).</li>
+                  <li>Alas kerja wajib bersifat isolatif dan selalu gunakan sepatu safety sol karet.</li>
+                </ol>
+              </div>
+
+              <h4>4. Alat dan Bahan Kerja Bengkel</h4>
+              <div class="table-responsive">
+                <table class="tech-table">
+                  <thead>
+                    <tr><th>Nama Alat</th><th>Kategori</th><th>Fungsi Utama</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Tang Potong (Side Cutter)</td><td>Alat Tangan</td><td>Memotong sisa kawat kaki komponen setelah penyolderan.</td></tr>
+                    <tr><td>Tang Lancip (Long Nose)</td><td>Alat Tangan</td><td>Membengkokkan kaki komponen dan menjepit di ruang sempit.</td></tr>
+                    <tr><td>Multimeter Digital</td><td>Alat Ukur</td><td>Mengukur tegangan (V), arus (A), dan resistansi (Ω).</td></tr>
+                    <tr><td>Solder Station</td><td>Penyolderan</td><td>Memanaskan pad tembaga dan mencairkan timah paduan.</td></tr>
+                    <tr><td>Breadboard / Project Board</td><td>Bahan Uji</td><td>Papan prototipe tanpa solder untuk uji coba rangkaian sementara.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="tab-pane" data-pane="contoh">
+              <h4>Studi Kasus: Kegagalan Komponen Akibat Pelepasan Listrik Statis (ESD)</h4>
+              <p>
+                Seorang siswa merakit modul mikrokontroler tanpa mengenakan gelang antistatis. Saat tubuh siswa bergesekan dengan kursi plastik, tercipta muatan listrik statis hingga 3.000 Volt. Ketika jari menyentuh pin IC mikrokontroler, lonjakan arus mikro menembus lapisan oksida silikon setebal nanometer, menyebabkan chip mati total seketika tanpa menimbulkan bekas terbakar yang terlihat dari luar.
+              </p>
+              <div class="callout callout-info">
+                <strong>Solusi Standar Industri:</strong> Operator dan teknisi wajib menggunakan matras antistatik meja kerja, gelang ESD yang terhubung ke arde (grounding) bengkel, serta wadah antistatik pembungkus PCB.
+              </div>
+            </div>
+
+            <div class="tab-pane" data-pane="latihan">
+              <h4>Uji Pemahaman Mandiri</h4>
+              <p>1. Jelaskan perbedaan pokok antara sistem kelistrikan daya dengan teknik elektronika!</p>
+              <p>2. Mengapa uap sisa pembakaran timah solder berbahaya jika dihirup teknisi dalam jangka panjang?</p>
+              <button type="button" class="btn btn-sm btn-secondary self-check-reveal-btn">Buka Kunci Jawaban & Pembahasan ▼</button>
+              <div style="display: none; margin-top: 1rem;" class="callout callout-success">
+                <strong>Kunci Jawaban:</strong><br>
+                1. Kelistrikan daya berorientasi pada penyaluran energi listrik berdaya besar (kabel transmisi, motor penggerak berat), sedangkan elektronika berorientasi pada pemrosesan sinyal informasi berdaya kecil dengan kontrol switching semikonduktor kecepatan tinggi.<br>
+                2. Asap solder mengandung partikel rosin/flux dan serbuk timbal mikro yang dapat mengiritasi paru-paru, memicu asma, dan keracunan logam berat pada sistem saraf jika terakumulasi.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== MATERI 2 ==================== -->
+        <article class="materi-card" id="materi-2" data-keywords="dasar listrik tegangan arus hambatan daya hukum ohm volt ampere ohm watt kalkulator perhitungan rumus">
+          <div class="materi-header">
+            <div class="materi-header-left">
+              <span class="materi-badge-num">MODUL 02</span>
+              <div>
+                <h2 class="materi-header-title">Dasar-Dasar Listrik & Hukum Ohm</h2>
+                <span class="badge badge-orange materi-status-badge" data-target="materi-2">Belum Selesai</span>
+              </div>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-orange materi-toggle-btn" data-materi-id="materi-2">
+              Tandai Selesai
+            </button>
+          </div>
+
+          <div class="mode-tabs">
+            <button type="button" class="mode-tab active" data-tab="ringkasan">📑 Ringkasan</button>
+            <button type="button" class="mode-tab" data-tab="lengkap">📖 Penjelasan Lengkap</button>
+            <button type="button" class="mode-tab" data-tab="contoh">💡 Contoh & Kalkulator</button>
+            <button type="button" class="mode-tab" data-tab="latihan">✍️ Latihan Mandiri</button>
+          </div>
+
+          <div class="materi-body">
+            <div class="tab-pane active" data-pane="ringkasan">
+              <ul style="line-height: 1.8;">
+                <li><strong>Tegangan (V):</strong> Beda potensial listrik, satuan Volt (V). Diibaratkan tekanan air di dalam pipa.</li>
+                <li><strong>Arus Listrik (I):</strong> Laju aliran muatan elektron, satuan Ampere (A). Diibaratkan debit aliran air per detik.</li>
+                <li><strong>Hambatan (R):</strong> Derajat perlawanan material terhadap aliran arus, satuan Ohm (Ω). Diibaratkan penyempitan diameter pipa.</li>
+                <li><strong>Daya Listrik (P):</strong> Laju energi listrik yang diubah menjadi bentuk lain (panas, cahaya, gerak), satuan Watt (W).</li>
+                <li><strong>Rumus Hukum Ohm:</strong> <code>V = I × R</code> &nbsp;|&nbsp; <code>I = V / R</code> &nbsp;|&nbsp; <code>R = V / I</code></li>
+                <li><strong>Rumus Daya Listrik:</strong> <code>P = V × I</code> &nbsp;|&nbsp; <code>P = I² × R</code> &nbsp;|&nbsp; <code>P = V² / R</code></li>
+              </ul>
+            </div>
+
+            <div class="tab-pane" data-pane="lengkap">
+              <h4>1. Besaran Utama Listrik</h4>
+              <div class="table-responsive">
+                <table class="tech-table">
+                  <thead>
+                    <tr><th>Besaran</th><th>Simbol</th><th>Satuan Internasional</th><th>Definisi Fisika</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Tegangan</td><td>V atau E</td><td>Volt (V)</td><td>Energi 1 Joule yang diperlukan untuk memindahkan muatan 1 Coulomb.</td></tr>
+                    <tr><td>Kuat Arus</td><td>I</td><td>Ampere (A)</td><td>Laju 1 Coulomb muatan elektron yang mengalir melalui penampang dalam 1 detik.</td></tr>
+                    <tr><td>Hambatan</td><td>R</td><td>Ohm (Ω)</td><td>Hambatan kawat yang membatasi arus 1 Ampere jika diberi tegangan 1 Volt.</td></tr>
+                    <tr><td>Daya Listrik</td><td>P</td><td>Watt (W)</td><td>Kecepatan pemakaian energi listrik sebesar 1 Joule setiap 1 detik.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h4>2. Konsep Hukum Ohm (Georg Simon Ohm, 1827)</h4>
+              <p>
+                Hukum Ohm menyatakan bahwa kuat arus listrik (I) yang mengalir pada penghantar berbanding lurus dengan beda potensial atau tegangan (V) yang diberikan di antara ujung-ujungnya, dan berbanding terbalik dengan nilai resistansi (R) penghantar tersebut pada suhu konstan.
+              </p>
+              <div class="callout callout-info">
+                <strong>Segitiga Ajaib Ohm:</strong><br>
+                Tutup huruf <strong>V</strong>: V = I × R<br>
+                Tutup huruf <strong>I</strong>: I = V / R<br>
+                Tutup huruf <strong>R</strong>: R = V / I
+              </div>
+            </div>
+
+            <div class="tab-pane" data-pane="contoh">
+              <h4>Contoh Perhitungan Rangkaian Nyata:</h4>
+              <p>
+                Sebuah modul relay 12V DC memiliki kumparan kawat tembaga internal dengan resistansi sebesar 300 Ω. Hitung berapa kuat arus listrik yang ditarik koil dan berapa daya listrik yang dikonsumsi relay tersebut!
+              </p>
+              <div class="callout callout-success">
+                <strong>Penyelesaian:</strong><br>
+                Diketahui: V = 12 Volt, R = 300 Ω<br>
+                1. Menghitung Arus: <code>I = V / R = 12 / 300 = 0,04 Ampere = 40 mA</code><br>
+                2. Menghitung Daya: <code>P = V × I = 12 × 0,04 = 0,48 Watt (480 mW)</code>
+              </div>
+
+              <!-- Interaktif Kalkulator Hukum Ohm di Modul -->
+              <div class="calc-card" style="margin-top: 2rem;">
+                <div class="calc-title">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                  Kalkulator Hukum Ohm Mandiri
+                </div>
+                <div class="calc-subtitle">Uji coba parameter tegangan dan hambatan rangkaian Anda:</div>
+                <div class="calc-grid">
+                  <div class="input-group">
+                    <label>Tegangan Sumber (V):</label>
+                    <div class="input-field-wrap">
+                      <input type="number" id="calc-v" class="input-field" value="24" step="any">
+                      <span class="input-unit">Volt</span>
+                    </div>
+                  </div>
+                  <div class="input-group">
+                    <label>Resistansi Beban (R):</label>
+                    <div class="input-field-wrap">
+                      <input type="number" id="calc-r" class="input-field" value="120" step="any">
+                      <span class="input-unit">Ω</span>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" id="btn-calc-ohm" class="btn btn-primary" style="width: 100%;">Hitung Nilai Arus & Daya</button>
+                <div class="calc-result-box">
+                  <div class="calc-result-label">Arus Listrik (I):</div>
+                  <div class="calc-result-val" id="calc-res-i">0.200 A (200.0 mA)</div>
+                  <div class="calc-result-label" style="margin-top: 0.8rem;">Daya Listrik (P):</div>
+                  <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-white);" id="calc-res-p">4.800 W</div>
+                  <div class="calc-formula-step" id="calc-step-formula">
+                    I = 24 V / 120 Ω = 0.2 A | P = 24 V × 0.2 A = 4.8 Watt
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" data-pane="latihan">
+              <h4>Latihan Soal Mandiri</h4>
+              <p>1. Sebuah LED merah membutuhkan arus aman 20 mA (0,02 A) dengan drop tegangan 2 Volt. Jika sumber tegangan adalah 9 Volt, berapakah nilai resistor pembatas arus (R) yang harus diserikan?</p>
+              <button type="button" class="btn btn-sm btn-secondary self-check-reveal-btn">Buka Kunci Jawaban & Pembahasan ▼</button>
+              <div style="display: none; margin-top: 1rem;" class="callout callout-success">
+                <strong>Pembahasan:</strong><br>
+                Tegangan yang harus ditahan resistor: <code>V_R = V_sumber - V_led = 9V - 2V = 7 Volt</code>.<br>
+                Nilai resistor: <code>R = V_R / I = 7 V / 0,02 A = 350 Ω</code> (di pasaran digunakan resistor standar 330 Ω atau 390 Ω).
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== MATERI 3 ==================== -->
+        <article class="materi-card" id="materi-3" data-keywords="rangkaian seri paralel pembagi tegangan pembagi arus rumus hambatan total perbandingan kalkulator">
+          <div class="materi-header">
+            <div class="materi-header-left">
+              <span class="materi-badge-num">MODUL 03</span>
+              <div>
+                <h2 class="materi-header-title">Rangkaian Seri dan Paralel</h2>
+                <span class="badge badge-orange materi-status-badge" data-target="materi-3">Belum Selesai</span>
+              </div>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-orange materi-toggle-btn" data-materi-id="materi-3">
+              Tandai Selesai
+            </button>
+          </div>
+
+          <div class="mode-tabs">
+            <button type="button" class="mode-tab active" data-tab="ringkasan">📑 Ringkasan</button>
+            <button type="button" class="mode-tab" data-tab="lengkap">📖 Penjelasan Lengkap</button>
+            <button type="button" class="mode-tab" data-tab="contoh">💡 Contoh & Kalkulator</button>
+            <button type="button" class="mode-tab" data-tab="latihan">✍️ Latihan Mandiri</button>
+          </div>
+
+          <div class="materi-body">
+            <div class="tab-pane active" data-pane="ringkasan">
+              <ul style="line-height: 1.8;">
+                <li><strong>Rangkaian Seri:</strong> Komponen disusun berderet dalam satu jalur tunggal. Arus listrik di semua titik SAMA, namun tegangan TERBAGI (<code>V_total = V1 + V2 + ...</code>). Hambatan total: <code>R_total = R1 + R2 + ...</code></li>
+                <li><strong>Rangkaian Paralel:</strong> Komponen disusun berjajar membentuk cabang. Tegangan di setiap cabang SAMA, namun arus listrik TERBAGI (<code>I_total = I1 + I2 + ...</code>). Hambatan total: <code>1/R_total = 1/R1 + 1/R2 + ...</code></li>
+                <li>Jika salah satu beban seri putus, seluruh rangkaian padam. Jika salah satu cabang paralel putus, cabang lain tetap menyala.</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane" data-pane="lengkap">
+              <h4>Tabel Komparasi Rangkaian Seri vs Paralel</h4>
+              <div class="table-responsive">
+                <table class="tech-table">
+                  <thead>
+                    <tr><th>Parameter</th><th>Rangkaian Seri</th><th>Rangkaian Paralel</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Karakter Arus (I)</td><td>I_total = I1 = I2 = I3 (Sama rata)</td><td>I_total = I1 + I2 + I3 (Terbagi per cabang)</td></tr>
+                    <tr><td>Karakter Tegangan (V)</td><td>V_total = V1 + V2 + V3 (Pembagi tegangan)</td><td>V_total = V1 = V2 = V3 (Tegangan sama)</td></tr>
+                    <tr><td>Hambatan Total (R_tot)</td><td>R_tot = R1 + R2 + R3 (Selalu lebih besar dari R terbesar)</td><td>1/R_tot = 1/R1 + 1/R2 (Selalu lebih kecil dari R terkecil)</td></tr>
+                    <tr><td>Jika 1 Komponen Putus</td><td>Semua arus terputus total (rangkaian mati)</td><td>Cabang lain tetap dialiri arus normal</td></tr>
+                    <tr><td>Penerapan Utama</td><td>Sensor pembagi tegangan, baterai senter</td><td>Instalasi listrik gedung, panel kendali pabrik</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h4>Rumus Pembagi Tegangan (Voltage Divider)</h4>
+              <p>
+                Pada dua resistor seri R1 dan R2 dengan tegangan masuk V_in, tegangan jatuh pada R2 dihitung dengan rumus:
+                <br><code>V_out = V_in × [ R2 / (R1 + R2) ]</code>
+              </p>
+            </div>
+
+            <div class="tab-pane" data-pane="contoh">
+              <h4>Kalkulator Hambatan Seri & Paralel</h4>
+              <div class="calc-card">
+                <div class="calc-title">Hitung R_total 2 Resistor</div>
+                <div class="calc-grid">
+                  <div class="input-group">
+                    <label>Resistor 1 (R1):</label>
+                    <div class="input-field-wrap">
+                      <input type="number" id="calc-circuit-r1" class="input-field" value="100" min="0.1">
+                      <span class="input-unit">Ω</span>
+                    </div>
+                  </div>
+                  <div class="input-group">
+                    <label>Resistor 2 (R2):</label>
+                    <div class="input-field-wrap">
+                      <input type="number" id="calc-circuit-r2" class="input-field" value="100" min="0.1">
+                      <span class="input-unit">Ω</span>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" id="btn-calc-circuit" class="btn btn-primary" style="width: 100%;">Hitung Seri & Paralel</button>
+                <div class="calc-result-box" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                  <div>
+                    <div class="calc-result-label">Hasil Jika Seri:</div>
+                    <div class="calc-result-val" id="calc-res-seri">200.00 Ω</div>
+                  </div>
+                  <div>
+                    <div class="calc-result-label">Hasil Jika Paralel:</div>
+                    <div class="calc-result-val" id="calc-res-paralel">50.00 Ω</div>
+                  </div>
+                </div>
+                <div class="calc-formula-step" id="calc-circuit-step" style="text-align: center; margin-top: 0.8rem;">
+                  Seri: 100 + 100 = 200 Ω | Paralel: (100 × 100) / (100 + 100) = 50 Ω
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" data-pane="latihan">
+              <h4>Latihan Pembagi Tegangan</h4>
+              <p>Sebuah sumber tegangan 10 Volt dihubungkan ke dua resistor seri R1 = 1 kΩ (1000 Ω) dan R2 = 3 kΩ (3000 Ω). Berapakah tegangan output pada titik antara R1 dan R2 (tegangan R2)?</p>
+              <button type="button" class="btn btn-sm btn-secondary self-check-reveal-btn">Buka Kunci Jawaban & Pembahasan ▼</button>
+              <div style="display: none; margin-top: 1rem;" class="callout callout-success">
+                <strong>Pembahasan:</strong><br>
+                <code>V_out = V_in × [ R2 / (R1 + R2) ] = 10 V × [ 3000 / (1000 + 3000) ] = 10 V × (3/4) = 7,5 Volt</code>.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== MATERI 4 ==================== -->
+        <article class="materi-card" id="materi-4" data-keywords="komponen pasif resistor potensiometer ldr thermistor ntc ptc kapasitor induktor simbol fungsi gelang warna">
+          <div class="materi-header">
+            <div class="materi-header-left">
+              <span class="materi-badge-num">MODUL 04</span>
+              <div>
+                <h2 class="materi-header-title">Komponen Elektronika Pasif</h2>
+                <span class="badge badge-orange materi-status-badge" data-target="materi-4">Belum Selesai</span>
+              </div>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-orange materi-toggle-btn" data-materi-id="materi-4">
+              Tandai Selesai
+            </button>
+          </div>
+
+          <div class="mode-tabs">
+            <button type="button" class="mode-tab active" data-tab="ringkasan">📑 Ringkasan</button>
+            <button type="button" class="mode-tab" data-tab="lengkap">📖 Penjelasan Lengkap</button>
+            <button type="button" class="mode-tab" data-tab="contoh">💡 Kalkulator Warna Resistor</button>
+            <button type="button" class="mode-tab" data-tab="latihan">✍️ Latihan Mandiri</button>
+          </div>
+
+          <div class="materi-body">
+            <div class="tab-pane active" data-pane="ringkasan">
+              <p>Komponen pasif adalah komponen elektronika yang dalam operasinya <strong>tidak memerlukan sumber tegangan/arus eksternal</strong> untuk dapat bekerja dan tidak memiliki kemampuan memperkuat daya listrik.</p>
+              <ul>
+                <li><strong>Resistor (R):</strong> Menghambat dan mengatur kuat arus listrik (Satuan: Ohm / Ω).</li>
+                <li><strong>Potensiometer:</strong> Resistor variabel dengan tuas putar atau geser untuk pengatur volume/tuning.</li>
+                <li><strong>LDR (Light Dependent Resistor):</strong> Resistor yang hambatannya berubah sesuai intensitas cahaya.</li>
+                <li><strong>Thermistor (NTC/PTC):</strong> Resistor sensor suhu peka panas/dingin.</li>
+                <li><strong>Kapasitor (C):</strong> Menyimpan muatan listrik sementara dan menyaring (filter) derau AC (Satuan: Farad / F).</li>
+                <li><strong>Induktor (L):</strong> Menyimpan energi dalam medan magnetik dan menahan arus bolak-balik frekuensi tinggi (Satuan: Henry / H).</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane" data-pane="lengkap">
+              <h4>Daftar Lengkap Komponen Pasif</h4>
+              <div class="table-responsive">
+                <table class="tech-table">
+                  <thead>
+                    <tr><th>Komponen</th><th>Simbol Skematik</th><th>Fungsi Utama</th><th>Satuan</th><th>Contoh Penggunaan</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Resistor Tetap</strong></td>
+                      <td>
+                        <svg width="60" height="24" viewBox="0 0 60 24">
+                          <path d="M5 12 L15 12 L18 6 L24 18 L30 6 L36 18 L42 6 L45 12 L55 12" stroke="#ff6b00" stroke-width="2" fill="none"/>
+                        </svg>
+                      </td>
+                      <td>Membatasi arus dan membagi tegangan.</td>
+                      <td>Ohm (Ω)</td>
+                      <td>Pembatas arus LED, pull-up button.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Potensiometer</strong></td>
+                      <td>
+                        <svg width="60" height="24" viewBox="0 0 60 24">
+                          <path d="M5 12 L15 12 L18 6 L24 18 L30 6 L36 18 L42 6 L45 12 L55 12" stroke="#ff6b00" stroke-width="2" fill="none"/>
+                          <path d="M30 22 L30 14 M27 17 L30 13 L33 17" stroke="#ffb703" stroke-width="2" fill="none"/>
+                        </svg>
+                      </td>
+                      <td>Hambatan dapat diatur secara manual.</td>
+                      <td>Ohm (Ω)</td>
+                      <td>Pengatur kecepatan motor, volume amplifier.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>LDR</strong></td>
+                      <td>
+                        <svg width="60" height="24" viewBox="0 0 60 24">
+                          <path d="M5 12 L15 12 L18 6 L24 18 L30 6 L36 18 L42 6 L45 12 L55 12" stroke="#ff6b00" stroke-width="2" fill="none"/>
+                          <circle cx="30" cy="12" r="11" stroke="#ff8c00" stroke-width="1.5" fill="none"/>
+                          <path d="M12 2 L18 6 M18 6 L14 6 M18 6 L18 2" stroke="#ffd700" stroke-width="1.5" fill="none"/>
+                        </svg>
+                      </td>
+                      <td>Resistansi turun saat terkena cahaya.</td>
+                      <td>Ohm (Ω)</td>
+                      <td>Lampu penerangan jalan otomatis, sensor scanner.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Thermistor NTC/PTC</strong></td>
+                      <td>
+                        <svg width="60" height="24" viewBox="0 0 60 24">
+                          <path d="M5 12 L15 12 L18 6 L24 18 L30 6 L36 18 L42 6 L45 12 L55 12" stroke="#ff6b00" stroke-width="2" fill="none"/>
+                          <path d="M10 20 L50 4 M45 4 L50 4" stroke="#ffb703" stroke-width="1.5" fill="none"/>
+                        </svg>
+                      </td>
+                      <td>NTC: suhu naik hambatan turun; PTC: suhu naik hambatan naik.</td>
+                      <td>Ohm (Ω)</td>
+                      <td>Proteksi motor overheat, sensor pendingin.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Kapasitor</strong></td>
+                      <td>
+                        <svg width="60" height="24" viewBox="0 0 60 24">
+                          <line x1="5" y1="12" x2="26" y2="12" stroke="#ff6b00" stroke-width="2"/>
+                          <line x1="26" y1="4" x2="26" y2="20" stroke="#ffffff" stroke-width="2"/>
+                          <line x1="34" y1="4" x2="34" y2="20" stroke="#ffffff" stroke-width="2"/>
+                          <line x1="34" y1="12" x2="55" y2="12" stroke="#ff6b00" stroke-width="2"/>
+                        </svg>
+                      </td>
+                      <td>Menyimpan muatan, perata riak tegangan power supply.</td>
+                      <td>Farad (μF, nF, pF)</td>
+                      <td>Filter catu daya, coupling amplifier, osilator.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Induktor</strong></td>
+                      <td>
+                        <svg width="60" height="24" viewBox="0 0 60 24">
+                          <path d="M5 14 L12 14 C12 6 22 6 22 14 C22 6 32 6 32 14 C32 6 42 6 42 14 C42 6 52 6 52 14 L55 14" stroke="#ff6b00" stroke-width="2" fill="none"/>
+                        </svg>
+                      </td>
+                      <td>Menyimpan energi magnetik, filter interferensi EMI.</td>
+                      <td>Henry (mH, μH)</td>
+                      <td>Choke coil, trafo switching SMPS.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="tab-pane" data-pane="contoh">
+              <h4>Kalkulator Kode Warna Resistor (4 Gelang)</h4>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">
+                Hafalan warna: <em>Hi-Co-Me-O-Ku-Hi-Bi-U-A-Pu</em> (Hitam 0, Cokelat 1, Merah 2, Oranye 3, Kuning 4, Hijau 5, Biru 6, Ungu 7, Abu 8, Putih 9).
+              </p>
+
+              <div class="calc-card">
+                <div style="margin: 1rem auto 1.5rem; text-align: center;">
+                  <div style="display: inline-flex; align-items: center; background: #cbb493; height: 36px; border-radius: 12px; padding: 0 15px; position: relative; border: 2px solid #a38c6b;">
+                    <div style="width: 25px; height: 3px; background: #94a3b8; position: absolute; left: -25px; top: 15px;"></div>
+                    <div class="visual-band" style="width: 8px; height: 36px; margin: 0 10px; background: #8b4513;"></div>
+                    <div class="visual-band" style="width: 8px; height: 36px; margin: 0 10px; background: #000000;"></div>
+                    <div class="visual-band" style="width: 8px; height: 36px; margin: 0 10px; background: #ef4444;"></div>
+                    <div class="visual-band" style="width: 8px; height: 36px; margin: 0 10px; background: #ffd700;"></div>
+                    <div style="width: 25px; height: 3px; background: #94a3b8; position: absolute; right: -25px; top: 15px;"></div>
+                  </div>
+                </div>
+
+                <div class="calc-grid">
+                  <div class="input-group">
+                    <label>Gelang 1 (Digit 1):</label>
+                    <select id="resistor-band-1" class="input-field">
+                      <option value="1" data-color="#8b4513" selected>Cokelat (1)</option>
+                      <option value="2" data-color="#ef4444">Merah (2)</option>
+                      <option value="3" data-color="#f97316">Oranye (3)</option>
+                      <option value="4" data-color="#eab308">Kuning (4)</option>
+                      <option value="5" data-color="#22c55e">Hijau (5)</option>
+                      <option value="6" data-color="#3b82f6">Biru (6)</option>
+                      <option value="7" data-color="#a855f7">Ungu (7)</option>
+                      <option value="8" data-color="#6b7280">Abu-abu (8)</option>
+                      <option value="9" data-color="#ffffff">Putih (9)</option>
+                    </select>
+                  </div>
+
+                  <div class="input-group">
+                    <label>Gelang 2 (Digit 2):</label>
+                    <select id="resistor-band-2" class="input-field">
+                      <option value="0" data-color="#000000" selected>Hitam (0)</option>
+                      <option value="1" data-color="#8b4513">Cokelat (1)</option>
+                      <option value="2" data-color="#ef4444">Merah (2)</option>
+                      <option value="3" data-color="#f97316">Oranye (3)</option>
+                      <option value="4" data-color="#eab308">Kuning (4)</option>
+                      <option value="5" data-color="#22c55e">Hijau (5)</option>
+                      <option value="6" data-color="#3b82f6">Biru (6)</option>
+                      <option value="7" data-color="#a855f7">Ungu (7)</option>
+                      <option value="8" data-color="#6b7280">Abu-abu (8)</option>
+                      <option value="9" data-color="#ffffff">Putih (9)</option>
+                    </select>
+                  </div>
+
+                  <div class="input-group">
+                    <label>Gelang 3 (Pengali / Multiplier):</label>
+                    <select id="resistor-band-3" class="input-field">
+                      <option value="1" data-color="#000000">Hitam (×1 Ω)</option>
+                      <option value="10" data-color="#8b4513">Cokelat (×10 Ω)</option>
+                      <option value="100" data-color="#ef4444" selected>Merah (×100 Ω)</option>
+                      <option value="1000" data-color="#f97316">Oranye (×1 kΩ)</option>
+                      <option value="10000" data-color="#eab308">Kuning (×10 kΩ)</option>
+                      <option value="100000" data-color="#22c55e">Hijau (×100 kΩ)</option>
+                      <option value="1000000" data-color="#3b82f6">Biru (×1 MΩ)</option>
+                      <option value="0.1" data-color="#ffd700">Emas (×0.1 Ω)</option>
+                      <option value="0.01" data-color="#c0c0c0">Perak (×0.01 Ω)</option>
+                    </select>
+                  </div>
+
+                  <div class="input-group">
+                    <label>Gelang 4 (Toleransi):</label>
+                    <select id="resistor-band-4" class="input-field">
+                      <option value="5" data-color="#ffd700" selected>Emas (±5%)</option>
+                      <option value="10" data-color="#c0c0c0">Perak (±10%)</option>
+                      <option value="1" data-color="#8b4513">Cokelat (±1%)</option>
+                      <option value="2" data-color="#ef4444">Merah (±2%)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="calc-result-box" style="margin-top: 1.2rem;">
+                  <div class="calc-result-label">Nilai Resistansi Terhitung:</div>
+                  <div class="calc-result-val" id="resistor-value-display">1.000 Ω (1 kΩ) ±5%</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" data-pane="latihan">
+              <h4>Latihan Soal</h4>
+              <p>Sebuah resistor memiliki gelang warna: Kuning, Ungu, Oranye, dan Emas. Tentukan nilai resistansinya beserta rentang toleransi minimal dan maksimalnya!</p>
+              <button type="button" class="btn btn-sm btn-secondary self-check-reveal-btn">Buka Kunci Jawaban & Pembahasan ▼</button>
+              <div style="display: none; margin-top: 1rem;" class="callout callout-success">
+                <strong>Pembahasan:</strong><br>
+                Kuning = 4, Ungu = 7, Oranye = ×10³ (1.000), Emas = ±5%.<br>
+                Nilai Nominal = 47.000 Ω (47 kΩ) ±5%.<br>
+                Toleransi 5% dari 47.000 = 2.350 Ω.<br>
+                Rentang nilai aktual yang memenuhi syarat: <strong>44.650 Ω hingga 49.350 Ω</strong>.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== MATERI 5 ==================== -->
+        <article class="materi-card" id="materi-5" data-keywords="komponen aktif dioda led zener transistor npn pnp bjt mosfet ic relay pinout simbol fungsi penyearah saklar">
+          <div class="materi-header">
+            <div class="materi-header-left">
+              <span class="materi-badge-num">MODUL 05</span>
+              <div>
+                <h2 class="materi-header-title">Komponen Elektronika Aktif</h2>
+                <span class="badge badge-orange materi-status-badge" data-target="materi-5">Belum Selesai</span>
+              </div>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-orange materi-toggle-btn" data-materi-id="materi-5">
+              Tandai Selesai
+            </button>
+          </div>
+
+          <div class="mode-tabs">
+            <button type="button" class="mode-tab active" data-tab="ringkasan">📑 Ringkasan</button>
+            <button type="button" class="mode-tab" data-tab="lengkap">📖 Penjelasan Lengkap</button>
+            <button type="button" class="mode-tab" data-tab="contoh">💡 Contoh & Rangkaian</button>
+            <button type="button" class="mode-tab" data-tab="latihan">✍️ Latihan Mandiri</button>
+          </div>
+
+          <div class="materi-body">
+            <div class="tab-pane active" data-pane="ringkasan">
+              <p>Komponen aktif adalah komponen elektronika yang <strong>memerlukan sumber daya arus/tegangan eksternal</strong> untuk dapat mengendalikan aliran elektron serta mampu menguatkan sinyal daya listrik.</p>
+              <ul>
+                <li><strong>Dioda Penyearah:</strong> Menghantarkan arus satu arah (Anoda ke Katoda) dan memblokir arah sebaliknya.</li>
+                <li><strong>LED (Light Emitting Diode):</strong> Dioda yang memancarkan cahaya saat dialiri arus bias maju.</li>
+                <li><strong>Dioda Zener:</strong> Bekerja pada tegangan tembus mundur (breakdown voltage) sebagai penstabil tegangan.</li>
+                <li><strong>Transistor BJT (NPN & PNP):</strong> Komponen 3 kaki (Basis, Kolektor, Emitor) untuk saklar elektronik dan penguat sinyal.</li>
+                <li><strong>MOSFET:</strong> Transistor efek medan terkendali tegangan pada gerbang (Gate) dengan efisiensi tinggi.</li>
+                <li><strong>IC (Integrated Circuit):</strong> Rangkaian miniatur monolitik ribuan transistor dalam satu kemasan (misal NE555, LM358).</li>
+                <li><strong>Relay:</strong> Saklar mekanik berpenggerak elektromagnetik untuk isolasi tegangan tinggi.</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane" data-pane="lengkap">
+              <h4>Karakteristik Komponen Aktif</h4>
+              <div class="table-responsive">
+                <table class="tech-table">
+                  <thead>
+                    <tr><th>Komponen</th><th>Simbol Skematik</th><th>Terminal / Kaki</th><th>Prinsip Kerja Singkat</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Dioda Penyearah</strong></td>
+                      <td>
+                        <svg width="60" height="24" viewBox="0 0 60 24">
+                          <line x1="5" y1="12" x2="25" y2="12" stroke="#ff6b00" stroke-width="2"/>
+                          <polygon points="25,5 25,19 39,12" fill="#ff6b00"/>
+                          <line x1="39" y1="5" x2="39" y2="19" stroke="#ffffff" stroke-width="2"/>
+                          <line x1="39" y1="12" x2="55" y2="12" stroke="#ff6b00" stroke-width="2"/>
+                        </svg>
+                      </td>
+                      <td>Anoda (+), Katoda (-)</td>
+                      <td>Arus mengalir jika Anoda lebih positif 0.7V (Silikon) dibanding Katoda.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Dioda Zener</strong></td>
+                      <td>
+                        <svg width="60" height="24" viewBox="0 0 60 24">
+                          <line x1="5" y1="12" x2="25" y2="12" stroke="#ff6b00" stroke-width="2"/>
+                          <polygon points="25,5 25,19 39,12" fill="#ff6b00"/>
+                          <path d="M35 5 L39 5 L39 19 L43 19" stroke="#ffffff" stroke-width="2" fill="none"/>
+                          <line x1="39" y1="12" x2="55" y2="12" stroke="#ff6b00" stroke-width="2"/>
+                        </svg>
+                      </td>
+                      <td>Anoda (+), Katoda (-)</td>
+                      <td>Menahan tegangan konstan saat dipasang terbalik (reverse bias) pada tegangan Vz.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Transistor NPN</strong></td>
+                      <td>
+                        <svg width="60" height="30" viewBox="0 0 60 30">
+                          <line x1="5" y1="15" x2="25" y2="15" stroke="#ff6b00" stroke-width="2"/>
+                          <line x1="25" y1="5" x2="25" y2="25" stroke="#ffffff" stroke-width="2.5"/>
+                          <line x1="25" y1="10" x2="45" y2="4" stroke="#ff6b00" stroke-width="2"/>
+                          <line x1="25" y1="20" x2="45" y2="26" stroke="#ff6b00" stroke-width="2"/>
+                          <polygon points="41,20 45,26 37,25" fill="#ff6b00"/>
+                        </svg>
+                      </td>
+                      <td>Basis (B), Kolektor (C), Emitor (E)</td>
+                      <td>Arus kecil pada Basis memicu aliran arus besar dari Kolektor menuju Emitor.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Relay</strong></td>
+                      <td>
+                        <svg width="60" height="24" viewBox="0 0 60 24">
+                          <rect x="10" y="4" width="18" height="16" stroke="#ff8c00" stroke-width="1.5" fill="none"/>
+                          <line x1="5" y1="8" x2="10" y2="8" stroke="#ff8c00" stroke-width="2"/>
+                          <line x1="5" y1="16" x2="10" y2="16" stroke="#ff8c00" stroke-width="2"/>
+                          <line x1="40" y1="6" x2="55" y2="6" stroke="#10b981" stroke-width="2"/>
+                          <line x1="40" y1="18" x2="55" y2="18" stroke="#10b981" stroke-width="2"/>
+                          <line x1="32" y1="12" x2="40" y2="6" stroke="#ffd700" stroke-width="2"/>
+                        </svg>
+                      </td>
+                      <td>Coil (A1-A2), Common (COM), NO, NC</td>
+                      <td>Koil elektromagnet menarik saklar mekanik untuk menghubungkan terminal NO.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="tab-pane" data-pane="contoh">
+              <h4>Prinsip Transistor Sebagai Saklar (Electronic Switch)</h4>
+              <p>
+                Pada dunia industri, transistor NPN sering digunakan untuk mengaktifkan beban yang membutuhkan arus lebih besar dibanding kemampuan pin mikrokontroler (misalnya koil relay 12V atau buzzer keras):
+              </p>
+              <ul>
+                <li><strong>Kondisi OFF (Cut-off):</strong> Tegangan Basis = 0V. Tidak ada arus basis (Ib = 0). Jalur Kolektor-Emitor putus bagaikan saklar terbuka. Beban mati.</li>
+                <li><strong>Kondisi ON (Saturasi):</strong> Tegangan Basis > 0.7V. Arus basis mengalir jenuh. Jalur Kolektor-Emitor terhubung singkat bagaikan saklar tertutup sempurna. Beban menyala.</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane" data-pane="latihan">
+              <h4>Latihan Soal</h4>
+              <p>Apakah perbedaan mendasar antara cara kerja transistor tipe NPN dengan transistor tipe PNP dalam mengalirkan arus listrik?</p>
+              <button type="button" class="btn btn-sm btn-secondary self-check-reveal-btn">Buka Kunci Jawaban & Pembahasan ▼</button>
+              <div style="display: none; margin-top: 1rem;" class="callout callout-success">
+                <strong>Pembahasan:</strong><br>
+                Pada transistor <strong>NPN</strong>, tegangan Basis harus lebih positif dibanding Emitor (+0,7V) agar arus utama mengalir dari <em>Kolektor ke Emitor</em> (sink current).<br>
+                Pada transistor <strong>PNP</strong>, tegangan Basis harus lebih negatif dibanding Emitor agar arus mengalir dari <em>Emitor ke Kolektor</em> (source current).
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== MATERI 6 ==================== -->
+        <article class="materi-card" id="materi-6" data-keywords="alat ukur multimeter avometer ukur tegangan arus resistansi continuity test uji dioda probe kalibrasi">
+          <div class="materi-header">
+            <div class="materi-header-left">
+              <span class="materi-badge-num">MODUL 06</span>
+              <div>
+                <h2 class="materi-header-title">Alat Ukur Elektronika & Prosedur Pengujian</h2>
+                <span class="badge badge-orange materi-status-badge" data-target="materi-6">Belum Selesai</span>
+              </div>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-orange materi-toggle-btn" data-materi-id="materi-6">
+              Tandai Selesai
+            </button>
+          </div>
+
+          <div class="mode-tabs">
+            <button type="button" class="mode-tab active" data-tab="ringkasan">📑 Ringkasan</button>
+            <button type="button" class="mode-tab" data-tab="lengkap">📖 Penjelasan Lengkap</button>
+            <button type="button" class="mode-tab" data-tab="contoh">💡 Prosedur Step-by-Step</button>
+            <button type="button" class="mode-tab" data-tab="latihan">✍️ Latihan Mandiri</button>
+          </div>
+
+          <div class="materi-body">
+            <div class="tab-pane active" data-pane="ringkasan">
+              <ul style="line-height: 1.8;">
+                <li><strong>Multimeter (AVO-Meter):</strong> Alat ukur serbaguna untuk Ampere (Arus), Volt (Tegangan), dan Ohm (Hambatan). Tersedia tipe Analog (jarum) dan Digital (layar LCD).</li>
+                <li><strong>Mengukur Tegangan (V):</strong> Probe dipasang <strong>PARALEL</strong> terhadap komponen yang diukur dalam kondisi rangkaian bertegangan aktif.</li>
+                <li><strong>Mengukur Arus (A):</strong> Probe dipasang <strong>SERI</strong> dengan memutus jalur rangkaian agar arus mengalir melalui meter. Waspada korsleting!</li>
+                <li><strong>Mengukur Resistansi (Ω):</strong> Rangkaian <strong>WAJIB MATI TOTAL (OFF)</strong> dan komponen dilepaskan minimal 1 kakinya dari PCB.</li>
+                <li><strong>Continuity Test:</strong> Menguji keutuhan jalur kabel/PCB dengan indikator bunyi buzzer.</li>
+                <li><strong>Uji Dioda:</strong> Mengukur tegangan jatuh maju (forward voltage drop ~0.6V) dan memastikan tidak tembus bocor saat dibalik (OL).</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane" data-pane="lengkap">
+              <h4>Panduan Detail Penggunaan Multimeter</h4>
+              <div class="callout callout-danger">
+                <div class="callout-title">PERINGATAN KESELAMATAN PENGUKURAN:</div>
+                Jangan sekali-kali menyentuh probe ke sumber tegangan tinggi PLN saat selektor berada di posisi Ohmmeter atau Amperemeter! Hal ini akan menyebabkan sekring multimeter meledak atau alat terbakar.
+              </div>
+
+              <h4>1. Cara Mengukur Tegangan DC (Direct Current)</h4>
+              <ol style="padding-left: 1.4rem;">
+                <li>Tancapkan probe hitam ke soket <code>COM</code> dan probe merah ke soket <code>V/Ω</code>.</li>
+                <li>Putar selektor putar ke mode <code>DCV (V⎓)</code> dengan batas ukur lebih tinggi dari tegangan estimasi (misal skala 20V untuk aki 12V).</li>
+                <li>Tempelkan probe merah ke kutub positif (+) dan probe hitam ke kutub negatif (-/GND).</li>
+                <li>Baca nilai pada layar LCD multimeter digital.</li>
+              </ol>
+
+              <h4>2. Cara Mengukur Kuat Arus DC (Amperemeter)</h4>
+              <ol style="padding-left: 1.4rem;">
+                <li>Matikan catu daya terlebih dahulu.</li>
+                <li>Pindahkan probe merah ke soket <code>mA</code> atau <code>10A</code> sesuai perkiraan beban.</li>
+                <li>Buka/putuskan salah satu titik sambungan kawat rangkaian.</li>
+                <li>Hubungkan probe meter secara seri pada celah kawat yang terbuka tadi.</li>
+                <li>Nyalakan catu daya dan catat angka arus yang terbaca.</li>
+              </ol>
+
+              <h4>3. Uji Kontinuitas (Continuity Test) & Uji Dioda</h4>
+              <p>
+                Putar selektor ke lambang Dioda / Gelombang Suara (Buzzer). Tempelkan kedua ujung probe multimeter. Bunyi "BEEP" nyaring menandakan resistansi di bawah 50 Ω (jalur sambung utuh).
+              </p>
+              <p>
+                Untuk menguji dioda: Probe merah ke Anoda, probe hitam ke Katoda -> layar menampilkan ~0.55V - 0.70V (Normal). Tukar posisi probe -> layar menampilkan <code>OL</code> atau <code>1</code> (Over Limit / Reverse bias normal). Jika kedua arah bunyi beep, dioda dinyatakan <strong>Korslet (Rusak)</strong>.
+              </p>
+            </div>
+
+            <div class="tab-pane" data-pane="contoh">
+              <h4>Diagram Rangkaian Pemasangan Alat Ukur</h4>
+              <div class="table-responsive">
+                <table class="tech-table">
+                  <thead>
+                    <tr><th>Uji Yang Dilakukan</th><th>Metode Sambungan</th><th>Kondisi Sumber Daya</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Uji Tegangan Lampu</td><td>Paralel (melintasi kedua kaki lampu)</td><td>POWER ON (Menyala)</td></tr>
+                    <tr><td>Uji Arus Beban Motor</td><td>Seri (menyisip di antara kutub positif dan motor)</td><td>POWER ON (Menyala)</td></tr>
+                    <tr><td>Uji Nilai Resistor 10k</td><td>Kedua probe menjepit kaki resistor</td><td>POWER OFF (Wajib Dimatikan)</td></tr>
+                    <tr><td>Cek Kabel Putus</td><td>Ujung probe di masing-masing ujung kabel</td><td>POWER OFF (Wajib Dimatikan)</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="tab-pane" data-pane="latihan">
+              <h4>Latihan Soal</h4>
+              <p>Mengapa saat mengukur nilai hambatan (resistansi) suatu resistor pada PCB, komponen tidak boleh diukur saat alat masih terhubung ke listrik dan disarankan mengangkat salah satu kaki resistor?</p>
+              <button type="button" class="btn btn-sm btn-secondary self-check-reveal-btn">Buka Kunci Jawaban & Pembahasan ▼</button>
+              <div style="display: none; margin-top: 1rem;" class="callout callout-success">
+                <strong>Pembahasan:</strong><br>
+                1. Jika ada tegangan aktif, arus luar akan masuk merusak sirkuit internal Ohmmeter.<br>
+                2. Jika resistor masih tersolder lengkap di PCB, jalur komponen lain yang terhubung paralel akan ikut terukur sehingga nilai hambatan yang terbaca di multimeter menjadi jauh lebih kecil dari nilai aslinya.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== MATERI 7 ==================== -->
+        <article class="materi-card" id="materi-7" data-keywords="penyolderan pcb solder timah tin desoldering atraktor pad cold solder bridge perfboard lab simulasi">
+          <div class="materi-header">
+            <div class="materi-header-left">
+              <span class="materi-badge-num">MODUL 07</span>
+              <div>
+                <h2 class="materi-header-title">Penyolderan, PCB & Simulator Solder Lab</h2>
+                <span class="badge badge-orange materi-status-badge" data-target="materi-7">Belum Selesai</span>
+              </div>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-orange materi-toggle-btn" data-materi-id="materi-7">
+              Tandai Selesai
+            </button>
+          </div>
+
+          <div class="mode-tabs">
+            <button type="button" class="mode-tab active" data-tab="ringkasan">📑 Ringkasan</button>
+            <button type="button" class="mode-tab" data-tab="lengkap">📖 Penjelasan Lengkap</button>
+            <button type="button" class="mode-tab" data-tab="contoh">💡 Simulator Solder Lab Interaktif</button>
+            <button type="button" class="mode-tab" data-tab="latihan">✍️ Latihan Mandiri</button>
+          </div>
+
+          <div class="materi-body">
+            <div class="tab-pane active" data-pane="ringkasan">
+              <ul style="line-height: 1.8;">
+                <li><strong>Solder:</strong> Proses penyambungan dua atau lebih logam dengan melelehkan logam pengisi (timah) bersuhu leleh lebih rendah dari logam kerja (di bawah 450°C).</li>
+                <li><strong>Timah Solder:</strong> Umumnya paduan Timah-Timbal (Sn60/Pb40 leleh 188°C) atau Bebas Timbal (RoHS Lead-Free leleh ~217°C) dengan inti pasta flux (rosin core).</li>
+                <li><strong>Teknik 4 Langkah:</strong> Panaskan pad & kaki (1-2 detik) &rarr; Masukkan timah &rarr; Tarik timah &rarr; Angkat ujung solder. Waktu total ideal: 3-4 detik.</li>
+                <li><strong>Bentuk Solderan Ideal:</strong> Kerucut cekung menyerupai gunung berapi mengkilap (concave fillet).</li>
+                <li><strong>PCB (Printed Circuit Board):</strong> Papan sirkuit cetak dari bahan isolator pertinax (FR-2) atau fiberglass epoxy (FR-4) berlapis tembaga.</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane" data-pane="lengkap">
+              <h4>Peralatan Praktik Penyolderan</h4>
+              <ul>
+                <li><strong>Soldering Iron:</strong> Daya 30W - 60W dengan pengatur suhu (temperature controlled).</li>
+                <li><strong>Sponge Basah & Brass Wire:</strong> Untuk membersihkan oksidasi hitam pada mata solder (tip) sebelum menyolder.</li>
+                <li><strong>Desoldering Pump (Sucker / Atraktor):</strong> Pompa vakum mekanik pegas untuk menyedot timah cair saat membongkar komponen.</li>
+                <li><strong>Solder Wick / Desoldering Braid:</strong> Pita tembaga serabut untuk membersihkan sisa timah pada bantalan SMD.</li>
+              </ul>
+
+              <h4>Jenis-Jenis PCB</h4>
+              <div class="table-responsive">
+                <table class="tech-table">
+                  <thead>
+                    <tr><th>Tipe PCB</th><th>Lapisan Tembaga</th><th>Karakteristik & Penerapan</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Perfboard / Dot Matrix</td><td>Bantalan Berlubang</td><td>Papan prototyping cepat untuk uji tugas sekolah atau tugas akhir.</td></tr>
+                    <tr><td>Single Layer PCB</td><td>1 Sisi (Bawah)</td><td>Jalur tembaga hanya di bagian bawah, biaya ekonomis untuk produk massal sederhana.</td></tr>
+                    <tr><td>Double Layer PCB</td><td>2 Sisi (Top & Bottom)</td><td>Menggunakan lubang tembus berlapis logam (PTH / Vias) untuk rangkaian padat.</td></tr>
+                    <tr><td>Multilayer PCB</td><td>4 hingga 16+ Lapisan</td><td>Digunakan pada motherboard komputer dan kontroler industri mutakhir.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- SIMULATOR MENYOLDER INTERAKTIF -->
+            <div class="tab-pane" data-pane="contoh">
+              <div class="solder-lab-container">
+                <div class="sim-header">
+                  <div>
+                    <h3 style="color: var(--orange-primary); font-size: 1.25rem; margin-bottom: 0.2rem;">Virtual Solder Lab Simulator</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">Latih teknik menyolder 4 detik: Panaskan Pad &rarr; Beri Timah &rarr; Lepaskan</p>
+                  </div>
+                  <div style="font-family: monospace; font-weight: 800; font-size: 1.1rem; color: var(--amber-gold);">
+                    Timer Pemanasan: <span id="solder-timer-val">0.0 dtk</span>
+                  </div>
+                </div>
+
+                <!-- Workbench Stage -->
+                <div class="solder-stage">
+                  <canvas id="solder-smoke-canvas" class="solder-smoke-layer"></canvas>
+
+                  <svg viewBox="0 0 400 220" width="400" height="220" style="overflow: visible;">
+                    <defs>
+                      <linearGradient id="solder-shiny-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#ffffff" />
+                        <stop offset="40%" stop-color="#cbd5e1" />
+                        <stop offset="100%" stop-color="#64748b" />
+                      </linearGradient>
+                    </defs>
+
+                    <!-- PCB Base Plate (Green FR-4) -->
+                    <rect x="50" y="150" width="300" height="30" rx="4" fill="#064e3b" stroke="#047857" stroke-width="2"/>
+                    <!-- Copper Pad -->
+                    <ellipse cx="200" cy="150" rx="35" ry="10" fill="#b45309" stroke="#d97706" stroke-width="2"/>
+                    <ellipse id="solder-heat-glow" cx="200" cy="150" rx="42" ry="14" fill="#ff6b00" opacity="0"/>
+                    <circle id="solder-flux-ring" cx="200" cy="150" r="28" fill="none" stroke="#fbbf24" stroke-width="2" stroke-dasharray="3 5" opacity="0"/>
+
+                    <!-- Component Leg Lead (Silver Pin) -->
+                    <rect x="196" y="50" width="8" height="105" fill="#94a3b8" stroke="#475569" stroke-width="1"/>
+
+                    <!-- Molten Solder Blob (Hidden initially) -->
+                    <path id="solder-joint-blob" d="M 175 152 C 185 142 195 115 200 115 C 205 115 215 142 225 152 Z" fill="url(#solder-shiny-gradient)" stroke="#475569" stroke-width="1.5" style="display: none; transition: transform 0.4s ease;"/>
+                    <path id="solder-molten-drop" d="M 196 137 Q 200 132 204 137 L 204 151 Q 200 157 196 151 Z" fill="#fff7ed" opacity="0"/>
+
+                    <!-- Soldering Iron Tip Graphic -->
+                    <g id="solder-iron-tip" style="transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); transform-origin: 200px 150px;">
+                      <!-- Iron Body -->
+                      <polygon points="270,70 290,50 360,110 340,130" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+                      <!-- Heating Element -->
+                      <polygon points="245,95 270,70 300,100 275,125" fill="#475569"/>
+                      <!-- Copper Tip -->
+                      <polygon points="202,148 245,95 260,110" fill="#f59e0b" stroke="#d97706" stroke-width="1"/>
+                      <circle id="solder-tip-glow" cx="238" cy="105" r="10" fill="#ff6b00" opacity="0"/>
+                    </g>
+                  </svg>
+                </div>
+
+                <!-- Controls -->
+                <div class="solder-controls-grid">
+                  <div class="solder-gauge">
+                    <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Suhu Solder Station</span>
+                    <div class="solder-temp-text" id="solder-temp-val">350 °C</div>
+                    <input type="range" id="solder-temp-slider" min="150" max="450" value="350" step="10" style="width: 100%; margin-top: 0.5rem;">
+                  </div>
+
+                  <div style="display: flex; flex-direction: column; gap: 0.75rem; justify-content: center;">
+                    <button type="button" id="btn-apply-solder" class="btn btn-primary">
+                      🔥 Tempelkan Ujung Solder ke Pad
+                    </button>
+                    <button type="button" id="btn-apply-tin" class="btn btn-secondary">
+                      🪙 Masukkan Kawat Timah
+                    </button>
+                  </div>
+
+                  <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <button type="button" id="btn-reset-solder" class="btn btn-outline-orange">
+                      🔄 Ganti Pad / Ulangi Solder
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Verdict Box -->
+                <div id="solder-verdict-box" style="margin-top: 1rem;">
+                  <div class="callout callout-info" style="margin-bottom: 0;">
+                    <strong>Petunjuk Lab:</strong> Atur suhu ke 350°C, klik tombol <em>Tempelkan Ujung Solder</em>, tunggu 1 detik lalu klik <em>Masukkan Kawat Timah</em>, biarkan meleleh hingga 3-4 detik total, lalu lepaskan solder!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" data-pane="latihan">
+              <h4>Latihan Soal</h4>
+              <p>Apa fungsi utama dari inti flux (rosin core) yang terdapat di dalam kawat timah solder?</p>
+              <button type="button" class="btn btn-sm btn-secondary self-check-reveal-btn">Buka Kunci Jawaban & Pembahasan ▼</button>
+              <div style="display: none; margin-top: 1rem;" class="callout callout-success">
+                <strong>Pembahasan:</strong><br>
+                Flux berfungsi membersihkan lapisan oksida logam pada tembaga saat dipanaskan, mencegah timbulnya oksidasi baru selama proses penyolderan, serta menurunkan tegangan permukaan timah cair sehingga timah dapat mengalir mulus dan merekat kuat (wetting) pada pad PCB.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== MATERI 8 ==================== -->
+        <article class="materi-card" id="materi-8" data-keywords="elektronika digital biner logika and or not nand nor xor boolean generator rangkaian ab cd e simulator">
+          <div class="materi-header">
+            <div class="materi-header-left">
+              <span class="materi-badge-num">MODUL 08</span>
+              <div>
+                <h2 class="materi-header-title">Elektronika Digital & Generator Rangkaian Boolean</h2>
+                <span class="badge badge-orange materi-status-badge" data-target="materi-8">Belum Selesai</span>
+              </div>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-orange materi-toggle-btn" data-materi-id="materi-8">
+              Tandai Selesai
+            </button>
+          </div>
+
+          <div class="mode-tabs">
+            <button type="button" class="mode-tab active" data-tab="ringkasan">📑 Ringkasan</button>
+            <button type="button" class="mode-tab" data-tab="lengkap">📖 Penjelasan Lengkap</button>
+            <button type="button" class="mode-tab" data-tab="contoh">💡 Generator Rangkaian (AB+CD)E</button>
+            <button type="button" class="mode-tab" data-tab="latihan">✍️ Latihan Mandiri</button>
+          </div>
+
+          <div class="materi-body">
+            <div class="tab-pane active" data-pane="ringkasan">
+              <ul style="line-height: 1.8;">
+                <li><strong>Sistem Biner:</strong> Sistem bilangan berbasis 2 yang hanya mengenal dua simbol: angka <strong>0</strong> dan <strong>1</strong>.</li>
+                <li><strong>Tingkat Logika:</strong> Logika 0 = LOW (Tegangan 0V - 0.8V TTL), Logika 1 = HIGH (Tegangan 2V - 5V TTL).</li>
+                <li><strong>Gerbang Logika Dasar:</strong>
+                  <ul>
+                    <li><code>AND</code>: Output 1 hanya jika SEMUA input bernilai 1. (Y = A · B)</li>
+                    <li><code>OR</code>: Output 1 jika SALAH SATU atau kedua input bernilai 1. (Y = A + B)</li>
+                    <li><code>NOT</code>: Membalikkan nilai input (0 jadi 1, 1 jadi 0). (Y = Ā)</li>
+                  </ul>
+                </li>
+                <li><strong>Gerbang Logika Turunan:</strong> <code>NAND</code> (NOT-AND), <code>NOR</code> (NOT-OR), <code>XOR</code> (Exclusive-OR: output 1 jika input beda), <code>XNOR</code>.</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane" data-pane="lengkap">
+              <h4>Tabel Kebenaran (Truth Tables) Standar IEEE</h4>
+              <div class="table-responsive">
+                <table class="tech-table">
+                  <thead>
+                    <tr><th>Input A</th><th>Input B</th><th>AND</th><th>OR</th><th>NAND</th><th>NOR</th><th>XOR</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+                    <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+                    <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+                    <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h4>Gerbang NOT (Inverter)</h4>
+              <p>Gerbang dengan 1 input tunggal: Jika Input = 0 &rarr; Output = 1. Jika Input = 1 &rarr; Output = 0.</p>
+            </div>
+
+            <!-- GENERATOR RANGKAIAN BOOLEAN INTERAKTIF -->
+            <div class="tab-pane" data-pane="contoh">
+              <div class="bool-circuit-container">
+                <div class="sim-header">
+                  <div>
+                    <h3 style="color: var(--orange-primary); font-size: 1.3rem; margin-bottom: 0.2rem;">
+                      ⚡ Generator Rangkaian Logika dari Ekspresi Boolean
+                    </h3>
+                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">
+                      Ketikkan rumus logika (contoh: <code>(AB+CD)E</code>, <code>AB+C</code>, <code>(A+B)(C+D)</code>) untuk menghasilkan skematik gerbang dan animasi aliran arus oranye!
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Input Field & Button -->
+                <div class="bool-input-bar">
+                  <input type="text" id="bool-input-expr" class="bool-text-input" value="(AB+CD)E" placeholder="Masukkan formula logika...">
+                  <button type="button" id="bool-gen-btn" class="btn btn-primary">
+                    ⚡ Buat Rangkaian
+                  </button>
+                </div>
+
+                <!-- Presets -->
+                <div class="bool-examples">
+                  <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700;">Contoh Populer:</span>
+                  <button type="button" class="bool-preset-btn" data-expr="(AB+CD)E">(AB+CD)E</button>
+                  <button type="button" class="bool-preset-btn" data-expr="AB+CD">AB+CD</button>
+                  <button type="button" class="bool-preset-btn" data-expr="(A+B)(C+D)">(A+B)(C+D)</button>
+                  <button type="button" class="bool-preset-btn" data-expr="A+B">A+B</button>
+                  <button type="button" class="bool-preset-btn" data-expr="AB">AB</button>
+                </div>
+
+                <!-- Interactive Switches -->
+                <div>
+                  <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+                    Input Variabel (Klik chip untuk toggle LOW / HIGH):
+                  </span>
+                  <div class="bool-switches-strip" id="bool-switches-strip">
+                    <!-- Diisi dinamis -->
+                  </div>
+                </div>
+
+                <!-- Circuit Viewport Canvas/SVG -->
+                <div class="bool-circuit-viewport" id="bool-circuit-canvas" style="margin-top: 1.2rem;">
+                  <!-- Diisi dinamis oleh generator SVG -->
+                </div>
+
+                <!-- Output Indicator Banner -->
+                <div style="display: flex; align-items: center; justify-content: space-between; background: #141822; padding: 1.2rem 1.6rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-top: 1.2rem;">
+                  <div id="bool-output-text" style="font-size: 1.1rem; font-weight: 800;">
+                    OUTPUT: LOGIKA 0 (LOW / PADAM)
+                  </div>
+                  <div class="led-indicator" id="bool-output-led"></div>
+                </div>
+
+                <!-- Dynamic Truth Table -->
+                <div style="margin-top: 1.5rem;">
+                  <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 0.5rem;">
+                    Tabel Kebenaran Lengkap (Baris Aktif Disorot Oranye):
+                  </span>
+                  <div class="table-responsive" id="bool-truth-table-wrap">
+                    <!-- Diisi dinamis -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" data-pane="latihan">
+              <h4>Latihan Logika</h4>
+              <p>Sebuah sistem alarm keselamatan mesin industri hanya boleh menyala jika: Sensor Pintu Pengaman Terbuka (A = 1) DAN Sensor Tekanan Udara Kurang (B = 1). Gerbang logika apakah yang tepat digunakan untuk fungsi tersebut?</p>
+              <button type="button" class="btn btn-sm btn-secondary self-check-reveal-btn">Buka Kunci Jawaban & Pembahasan ▼</button>
+              <div style="display: none; margin-top: 1rem;" class="callout callout-success">
+                <strong>Pembahasan:</strong><br>
+                Gerbang yang tepat adalah <strong>Gerbang AND</strong>. Karena output alarm (Y = 1) hanya boleh aktif jika kedua syarat keselamatan A = 1 dan B = 1 terpenuhi secara serempak.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== MATERI 9 ==================== -->
+        <article class="materi-card" id="materi-9" data-keywords="mikrokontroler arduino uno digital input output analog pinmode digitalwrite digitalread analogread led button buzzer">
+          <div class="materi-header">
+            <div class="materi-header-left">
+              <span class="materi-badge-num">MODUL 09</span>
+              <div>
+                <h2 class="materi-header-title">Dasar Mikrokontroler & Arduino Uno</h2>
+                <span class="badge badge-orange materi-status-badge" data-target="materi-9">Belum Selesai</span>
+              </div>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-orange materi-toggle-btn" data-materi-id="materi-9">
+              Tandai Selesai
+            </button>
+          </div>
+
+          <div class="mode-tabs">
+            <button type="button" class="mode-tab active" data-tab="ringkasan">📑 Ringkasan</button>
+            <button type="button" class="mode-tab" data-tab="lengkap">📖 Penjelasan Lengkap</button>
+            <button type="button" class="mode-tab" data-tab="contoh">💡 Kode Sketch Dasar</button>
+            <button type="button" class="mode-tab" data-tab="latihan">✍️ Latihan Mandiri</button>
+          </div>
+
+          <div class="materi-body">
+            <div class="tab-pane active" data-pane="ringkasan">
+              <ul style="line-height: 1.8;">
+                <li><strong>Mikrokontroler:</strong> Komputer satu keping (single-chip computer) yang berisi prosesor (CPU), memori (RAM & Flash), dan port Input/Output terpadu.</li>
+                <li><strong>Arduino Uno R3:</strong> Board mikrokontroler berbasis chip ATmega328P dengan 14 pin I/O digital (6 di antaranya mendukung PWM) dan 6 pin analog input (A0 - A5).</li>
+                <li><strong>Struktur Sketch:</strong>
+                  <ul>
+                    <li><code>void setup()</code>: Dijalankan 1 kali saat board baru dinyalakan untuk inisialisasi arah pin.</li>
+                    <li><code>void loop()</code>: Dijalankan berulang terus menerus selama board dialiri daya.</li>
+                  </ul>
+                </li>
+                <li><strong>Fungsi Esensial:</strong> <code>pinMode(pin, mode)</code>, <code>digitalWrite(pin, value)</code>, <code>digitalRead(pin)</code>, <code>analogRead(pin)</code>, <code>delay(ms)</code>.</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane" data-pane="lengkap">
+              <h4>Anatomi Pin Arduino Uno R3</h4>
+              <div class="table-responsive">
+                <table class="tech-table">
+                  <thead>
+                    <tr><th>Kelompok Pin</th><th>Nama Terminal Pin</th><th>Deskripsi & Karakteristik</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Catu Daya (Power)</td><td>5V, 3.3V, GND, Vin</td><td>Menyuplai daya ke komponen luar atau menerima input tegangan DC 7-12V di Vin.</td></tr>
+                    <tr><td>Digital I/O</td><td>Pin D0 sampai D13</td><td>Mengirim atau membaca sinyal 0V (LOW) atau 5V (HIGH). Arus maksimal 20mA per pin.</td></tr>
+                    <tr><td>PWM (Pulse Width Mod.)</td><td>Pin ~3, ~5, ~6, ~9, ~10, ~11</td><td>Mengeluarkan sinyal denyut semu analog untuk mengatur terang LED atau kecepatan motor.</td></tr>
+                    <tr><td>Analog Input</td><td>Pin A0 sampai A5</td><td>Membaca tegangan variabel 0-5V menggunakan ADC 10-bit internal (nilai 0 - 1023).</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h4>Konsep Resistor Pull-up / Pull-down</h4>
+              <p>
+                Saat menggunakan Push Button mekanik, kaki input digital tidak boleh dibiarkan mengambang (floating pin) karena dapat menangkap derau interferensi udara liar. Dibutuhkan resistor pull-up (menarik ke 5V saat lepas) atau pull-down (menarik ke GND saat lepas) berukuran 10 kΩ, atau mengaktifkan pull-up internal chip dengan perintah: <code>pinMode(pin, INPUT_PULLUP)</code>.
+              </p>
+            </div>
+
+            <div class="tab-pane" data-pane="contoh">
+              <h4>Contoh Sketch: Push Button Mengendalikan LED</h4>
+              <div style="background: #080a0f; border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1.2rem; font-family: monospace; font-size: 0.9rem; overflow-x: auto;">
+                <span style="color: #64748b;">// Program Input-Output Sederhana TEI</span><br>
+                <span style="color: #ff8c00;">const int</span> pinLED = 13;<br>
+                <span style="color: #ff8c00;">const int</span> pinButton = 2;<br><br>
+                <span style="color: #ff8c00;">void</span> <span style="color: #ffffff;">setup</span>() {<br>
+                &nbsp;&nbsp;<span style="color: #ffb703;">pinMode</span>(pinLED, <span style="color: #ffd700;">OUTPUT</span>);<br>
+                &nbsp;&nbsp;<span style="color: #ffb703;">pinMode</span>(pinButton, <span style="color: #ffd700;">INPUT_PULLUP</span>); <span style="color: #64748b;">// Tombol aktif LOW ke GND</span><br>
+                }<br><br>
+                <span style="color: #ff8c00;">void</span> <span style="color: #ffffff;">loop</span>() {<br>
+                &nbsp;&nbsp;<span style="color: #ff8c00;">int</span> statusTombol = <span style="color: #ffb703;">digitalRead</span>(pinButton);<br><br>
+                &nbsp;&nbsp;<span style="color: #ff8c00;">if</span> (statusTombol == <span style="color: #ffd700;">LOW</span>) { <span style="color: #64748b;">// Tombol ditekan</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ffb703;">digitalWrite</span>(pinLED, <span style="color: #ffd700;">HIGH</span>); <span style="color: #64748b;">// Nyalakan LED</span><br>
+                &nbsp;&nbsp;} <span style="color: #ff8c00;">else</span> {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ffb703;">digitalWrite</span>(pinLED, <span style="color: #ffd700;">LOW</span>); &nbsp;<span style="color: #64748b;">// Matikan LED</span><br>
+                &nbsp;&nbsp;}<br>
+                }
+              </div>
+            </div>
+
+            <div class="tab-pane" data-pane="latihan">
+              <h4>Latihan Soal</h4>
+              <p>Sebuah sensor suhu analog dihubungkan ke pin A0 Arduino Uno. Jika multimeter mengukur tegangan keluaran sensor tepat 2,5 Volt, berapakah nilai bilangan bulat integer yang dihasilkan oleh fungsi <code>analogRead(A0)</code>?</p>
+              <button type="button" class="btn btn-sm btn-secondary self-check-reveal-btn">Buka Kunci Jawaban & Pembahasan ▼</button>
+              <div style="display: none; margin-top: 1rem;" class="callout callout-success">
+                <strong>Pembahasan:</strong><br>
+                ADC Arduino Uno adalah 10-bit dengan referensi 5 Volt (rentang 0 - 1023).<br>
+                Nilai ADC = <code>(V_ukur / 5.0) × 1023 = (2.5 / 5.0) × 1023 = 0.5 × 1023 ≈ 511 atau 512</code>.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== MATERI 10 ==================== -->
+        <article class="materi-card" id="materi-10" data-keywords="elektronika industri sensor aktuator proximity kontaktor relay motor listrik plc panel kontrol otomasi">
+          <div class="materi-header">
+            <div class="materi-header-left">
+              <span class="materi-badge-num">MODUL 10</span>
+              <div>
+                <h2 class="materi-header-title">Dasar Elektronika Industri & Otomasi</h2>
+                <span class="badge badge-orange materi-status-badge" data-target="materi-10">Belum Selesai</span>
+              </div>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-orange materi-toggle-btn" data-materi-id="materi-10">
+              Tandai Selesai
+            </button>
+          </div>
+
+          <div class="mode-tabs">
+            <button type="button" class="mode-tab active" data-tab="ringkasan">📑 Ringkasan</button>
+            <button type="button" class="mode-tab" data-tab="lengkap">📖 Penjelasan Lengkap</button>
+            <button type="button" class="mode-tab" data-tab="contoh">💡 Diagram Kontrol Industri</button>
+            <button type="button" class="mode-tab" data-tab="latihan">✍️ Latihan Mandiri</button>
+          </div>
+
+          <div class="materi-body">
+            <div class="tab-pane active" data-pane="ringkasan">
+              <ul style="line-height: 1.8;">
+                <li><strong>Sensor Industri:</strong> Perangkat pengubah besaran fisik (suhu, posisi, tekanan) menjadi sinyal listrik standar industri (4-20mA atau 0-10V DC).</li>
+                <li><strong>Aktuator Industri:</strong> Perangkat pengubah energi listrik menjadi energi mekanik (motor 3 fasa, solenoid valve pneumatik, pemanas elektrik).</li>
+                <li><strong>Kontaktor Magnetik:</strong> Saklar daya berkapasitas arus puluhan hingga ratusan Ampere berpenggerak kumparan elektromagnetik.</li>
+                <li><strong>PLC (Programmable Logic Controller):</strong> Komputer industri tangguh yang diprogram dengan Ladder Diagram untuk otomasi pabrik.</li>
+                <li><strong>Panel Kontrol:</strong> Box proteksi IP54/IP65 tempat instalasi pengaman listrik (MCB/MCCB, TOR, Relay, Timer, Terminal Block).</li>
+              </ul>
+            </div>
+
+            <div class="tab-pane" data-pane="lengkap">
+              <h4>1. Sensor Industri Nirsentuh (Proximity Sensor)</h4>
+              <ul>
+                <li><strong>Inductive Proximity:</strong> Hanya mendeteksi objek logam konduktif (besi, tembaga, kuningan) melalui osilator medan elektromagnetik.</li>
+                <li><strong>Capacitive Proximity:</strong> Mampu mendeteksi logam dan non-logam (ketinggian cairan dalam tabung plastik, butiran pakan, kayu).</li>
+                <li><strong>Photoelectric Sensor:</strong> Deteksi berbasis pancaran sinar infra merah (Through-beam, Retro-reflective, Diffuse).</li>
+              </ul>
+
+              <h4>2. Komponen Utama Panel Kontrol Motor Listrik</h4>
+              <div class="table-responsive">
+                <table class="tech-table">
+                  <thead>
+                    <tr><th>Komponen Panel</th><th>Simbol / Kode</th><th>Fungsi Proteksi & Kontrol</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>MCB (Miniature Circuit Breaker)</td><td>F1 / Q1</td><td>Pemutus arus otomatis jika terjadi hubungan singkat (korsleting) atau arus lebih.</td></tr>
+                    <tr><td>Kontaktor Magnetik</td><td>K1 / KM1</td><td>Menyambung suplai 380V AC 3-fasa (L1, L2, L3) ke motor saat koil A1-A2 diberi tegangan 220V.</td></tr>
+                    <tr><td>TOR (Thermal Overload Relay)</td><td>OL / F2</td><td>Melindungi kumparan motor dari kebakaran akibat beban mekanis mesin yang terlalu berat.</td></tr>
+                    <tr><td>Emergency Stop Button</td><td>S0</td><td>Tombol jamur merah berkunci putar untuk memutus darurat seluruh rangkaian daya saat terjadi kecelakaan.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h4>3. Pengenalan PLC (Programmable Logic Controller)</h4>
+              <p>
+                Sebelum ada PLC, otomasi pabrik menggunakan ratusan relay kabel rumit (Hardwired Relay Logic) yang sangat sulit jika ingin diubah alur logikanya. Dengan PLC, pengubahan urutan kerja mesin cukup dilakukan melalui perangkat lunak komputer menggunakan pemrograman grafis <strong>Ladder Diagram (Diagram Tangga)</strong> yang meniru kontak NO, NC, dan Coil.
+              </p>
+            </div>
+
+            <div class="tab-pane" data-pane="contoh">
+              <h4>Arsitektur Piramida Otomasi Industri</h4>
+              <div class="callout callout-info">
+                <strong>Hierarki Sistem TEI di Industri:</strong><br>
+                • <strong>Level 0 (Field Level):</strong> Sensor (Proximity, RTD), Aktuator (Solenoid, Motor 3 Fasa).<br>
+                • <strong>Level 1 (Control Level):</strong> PLC, Pengendali Suhu PID, Mikrokontroler.<br>
+                • <strong>Level 2 (Supervisory):</strong> Layar Sentuh HMI (Human Machine Interface) dan SCADA.<br>
+                • <strong>Level 3 (Enterprise):</strong> Jaringan IoT Industri dan Server Cloud Monitoring.
+              </div>
+            </div>
+
+            <div class="tab-pane" data-pane="latihan">
+              <h4>Latihan Soal</h4>
+              <p>Mengapa pada sistem kontrol motor listrik 3-fasa wajib dipasang Thermal Overload Relay (TOR) meskipun sudah ada MCB pada saluran utama?</p>
+              <button type="button" class="btn btn-sm btn-secondary self-check-reveal-btn">Buka Kunci Jawaban & Pembahasan ▼</button>
+              <div style="display: none; margin-top: 1rem;" class="callout callout-success">
+                <strong>Pembahasan:</strong><br>
+                MCB dirancang untuk memutus lonjakan arus sangat tinggi seketika akibat korsleting (short-circuit). Sedangkan TOR dirancang sensitif mendeteksi arus lebih berskala kecil namun berlangsung terus-menerus (overload akibat motor macet atau hilangnya salah satu fasa) yang memanaskan lilitan tembaga motor secara perlahan sehingga motor tidak terbakar.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ==================== MATERI 11: TABEL PERIODIK INTERAKTIF ==================== -->
+        <article class="materi-card periodic-materi-card" id="materi-11" data-keywords="tabel periodik unsur atom kimia sphere helix grid elemen">
+          <div class="materi-header">
+            <div class="materi-header-left">
+              <span class="materi-badge-num">MODUL 11</span>
+              <div>
+                <h2 class="materi-header-title">Tabel Periodik Interaktif 3D</h2>
+                <span class="badge badge-orange materi-status-badge" data-target="materi-11">Belum Selesai</span>
+              </div>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-orange materi-toggle-btn" data-materi-id="materi-11">Tandai Selesai</button>
+          </div>
+
+          <div class="mode-tabs">
+            <button type="button" class="mode-tab active" data-tab="ringkasan">📑 Ringkasan</button>
+            <button type="button" class="mode-tab" data-tab="lengkap">📖 Cara Membaca</button>
+            <button type="button" class="mode-tab" data-tab="contoh">🧪 Eksplorasi 3D</button>
+            <button type="button" class="mode-tab" data-tab="latihan">✍️ Tantangan</button>
+          </div>
+
+          <div class="materi-body">
+            <div class="tab-pane active" data-pane="ringkasan">
+              <p>Gunakan tabel periodik ini untuk mengenali simbol, nomor atom, massa atom relatif, dan kategori unsur yang sering ditemui dalam material elektronika.</p>
+              <div class="callout callout-info"><strong>Tip eksplorasi:</strong> Pilih mode <strong>Sphere</strong> atau <strong>Helix</strong>, lalu klik salah satu unsur untuk melihat detailnya.</div>
+            </div>
+            <div class="tab-pane" data-pane="lengkap">
+              <h4>Legenda Kategori Unsur</h4>
+              <p>Warna membedakan logam alkali, logam transisi, metaloid, nonlogam, halogen, gas mulia, lantanida, aktinida, dan kategori lainnya.</p>
+            </div>
+            <div class="tab-pane" data-pane="contoh">
+              <div class="periodic-lab" id="periodic-lab">
+                <div class="periodic-toolbar">
+                  <div>
+                    <h3 class="periodic-title">Periodic Element Explorer</h3>
+                    <p class="periodic-subtitle">Grid standar atau susunan 3D yang terinspirasi dari referensi animasi.</p>
+                  </div>
+                  <div class="periodic-modes" role="group" aria-label="Mode tampilan tabel periodik">
+                    <button type="button" class="periodic-mode-btn active" data-periodic-mode="grid">Grid</button>
+                    <button type="button" class="periodic-mode-btn" data-periodic-mode="sphere">Sphere</button>
+                    <button type="button" class="periodic-mode-btn" data-periodic-mode="helix">Helix</button>
+                    <button type="button" class="periodic-fullscreen-btn" id="periodic-fullscreen-btn" aria-pressed="false" aria-label="Buka tabel periodik dalam layar penuh">⛶ <span>Layar penuh</span></button>
+                  </div>
+                </div>
+                <div class="periodic-3d-controls" id="periodic-3d-controls" hidden>
+                  <button type="button" class="periodic-control-btn" id="periodic-reset-view" aria-label="Reset rotasi dan zoom tabel periodik">Reset tampilan</button>
+                  <span class="periodic-gesture-hint" aria-live="polite">Geser untuk memutar · Scroll/pinch untuk zoom</span>
+                </div>
+                <div class="periodic-detail" id="periodic-detail" aria-live="polite">
+                  <span class="periodic-detail-symbol">?</span>
+                  <div><strong>Pilih unsur</strong><span>Klik kartu unsur untuk melihat detail.</span></div>
+                </div>
+                <div class="periodic-legend" id="periodic-legend"></div>
+                <div class="periodic-stage mode-grid" id="periodic-stage" aria-label="Tabel periodik interaktif"></div>
+              </div>
+            </div>
+            <div class="tab-pane" data-pane="latihan">
+              <h4>Tantangan Cepat</h4>
+              <p>Temukan unsur yang umum digunakan sebagai konduktor jalur PCB, lalu klik kartunya dan sebutkan simbol serta nomor atomnya.</p>
+            </div>
+          </div>
+        </article>
+
+      </div> <!-- End materi-list -->
+
+      <!-- NAVIGASI BAWAH KE PRAKTIK -->
+      <div style="text-align: center; margin-top: 3.8rem; padding: 2.2rem; background: var(--bg-card); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+        <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem; color: var(--text-white);">Selesai Mempelajari Teori?</h3>
+        <p style="color: var(--text-muted); margin-bottom: 1.6rem;">Langkah berikutnya adalah menguji teori dalam 6 proyek perakitan laboratorium nyata.</p>
+        <a href="praktik.html" class="btn btn-primary">
+          Lanjut ke Praktik Elektronika &rarr;
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand-logo" style="margin-bottom: 0.8rem;">
+          <div class="brand-icon" style="width: 34px; height: 34px;">
+            <svg viewBox="0 0 24 24"><path d="M4 6h2v2H4V6zm0 5h2v2H4v-2zm0 5h2v2H4v-2zm14-10h2v2h-2V6zm0 5h2v2h-2v-2zm0 5h2v2h-2v-2zM6 4h2v2H6V4zm5 0h2v2h-2V4zm5 0h2v2h-2V4zM6 18h2v2H6v-2zm5 0h2v2h-2v-2zm5 0h2v2h-2v-2zM8 8h8v8H8V8z"/></svg>
+          </div>
+          <div class="brand-text">TEI <span>CLASS X</span></div>
+        </div>
+        <p>Platform Pembelajaran Mandiri Siswa SMK Teknik Elektronika Industri.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navigasi</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="materi.html">Materi</a></li>
+          <li><a href="praktik.html">Praktik</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Simulasi & Alat</h5>
+        <ul class="footer-links">
+          <li><a href="#materi-8">Generator (AB+CD)E</a></li>
+          <li><a href="#materi-7">Simulator Solder Lab</a></li>
+          <li><a href="#materi-2">Kalkulator Hukum Ohm</a></li>
+          <li><a href="#materi-4">Kalkulator Resistor</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Status Kemajuan</h5>
+        <div style="font-size: 0.95rem; color: var(--text-muted);">
+          Total Progres: <strong class="global-progress-text" style="color: var(--orange-primary);">0%</strong>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 TEI CLASS X — Media Edukasi Teknik Elektronika Industri SMK. Pure HTML, CSS, & JS.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/progress.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

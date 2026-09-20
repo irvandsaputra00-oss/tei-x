@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEI CLASS X — Belajar Dasar Teknik Elektronika Industri</title>
+  <meta name="description" content="Media belajar mandiri interaktif untuk siswa SMK Kelas 10 jurusan Teknik Elektronika Industri (TEI). Teori, praktik, simulasi rangkaian, osiloskop, dan kuis.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="TEI CLASS X Beranda">
+        <div class="brand-icon">
+          <!-- SVG Integrated Circuit Icon -->
+          <svg viewBox="0 0 24 24">
+            <path d="M4 6h2v2H4V6zm0 5h2v2H4v-2zm0 5h2v2H4v-2zm14-10h2v2h-2V6zm0 5h2v2h-2v-2zm0 5h2v2h-2v-2zM6 4h2v2H6V4zm5 0h2v2h-2V4zm5 0h2v2h-2V4zM6 18h2v2H6v-2zm5 0h2v2h-2v-2zm5 0h2v2h-2v-2zM8 8h8v8H8V8z"/>
+          </svg>
+        </div>
+        <div class="brand-text">TEI <span>CLASS X</span></div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link active">Beranda</a></li>
+          <li><a href="materi.html" class="nav-link">Materi</a></li>
+          <li><a href="praktik.html" class="nav-link">Praktik</a></li>
+          <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+          <li><a href="tentang.html" class="nav-link">Tentang</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Extra / Progress Badge & Hamburger -->
+      <div class="nav-extra">
+        <div class="nav-progress-badge" title="Kemajuan Belajar Keseluruhan">
+          <span class="nav-progress-circle"></span>
+          <span id="nav-progress-text">0% Selesai</span>
+        </div>
+        
+        <button class="hamburger" id="hamburger-btn" aria-label="Buka Menu Navigasi" aria-expanded="false">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 10h2v4h-2zm0 6h2v2h-2z"/></svg>
+            Kurikulum SMK Fase E • Teknik Elektronika Industri
+          </div>
+          <h1 class="hero-title">
+            Belajar Dasar <br>
+            <span class="gradient-text">Teknik Elektronika Industri</span>
+          </h1>
+          <p class="hero-subtitle">
+            Platform pembelajaran mandiri interaktif yang membantu siswa SMK Kelas 10 memahami dasar-dasar elektronika industri secara bertahap, terstruktur, dan aplikatif. Dilengkapi generator rangkaian ekspresi boolean, simulator solder lab, osiloskop gelombang, dan modul praktikum.
+          </p>
+
+          <div class="hero-actions">
+            <a href="materi.html" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+              Mulai Belajar
+            </a>
+            <a href="materi.html#materi-8" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+              Rangkai Logika (AB+CD)E
+            </a>
+            <a href="praktik.html" class="btn btn-outline-orange">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+              Coba Praktik Lab
+            </a>
+          </div>
+        </div>
+
+        <!-- HERO VISUAL / INTERACTIVE OSCILLOSCOPE MONITOR -->
+        <div class="hero-visual">
+          <div class="hero-circuit-art" aria-hidden="true">
+            <span class="hero-chip"></span>
+            <span class="hero-trace trace-one"></span>
+            <span class="hero-trace trace-two"></span>
+            <span class="hero-trace trace-three"></span>
+            <span class="hero-pulse pulse-one"></span>
+            <span class="hero-pulse pulse-two"></span>
+            <span class="hero-pulse pulse-three"></span>
+            <span class="hero-node node-one"></span>
+            <span class="hero-node node-two"></span>
+            <span class="hero-node node-three"></span>
+          </div>
+          <div class="oscilloscope-card">
+            <div class="circuit-card-header">
+              <div class="circuit-card-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Virtual Oscilloscope & Sinyal TEI
+              </div>
+              <div class="status-indicator">
+                <span class="status-pulse"></span> LIVE SCAN 60 FPS
+              </div>
+            </div>
+
+            <!-- Oscilloscope CRT Screen -->
+            <div class="oscilloscope-screen-wrapper">
+              <canvas id="oscilloscope-canvas" class="oscilloscope-canvas"></canvas>
+            </div>
+
+            <!-- Control Knobs -->
+            <div class="oscilloscope-knobs">
+              <div class="input-group">
+                <label style="font-size: 0.78rem;">Bentuk Gelombang:</label>
+                <select id="scope-wave-type" class="input-field" style="padding: 0.4rem 0.6rem; font-size: 0.85rem;">
+                  <option value="sine" selected>Sinusoida (AC)</option>
+                  <option value="square">Kotak / PWM (Digital)</option>
+                  <option value="triangle">Segitiga / Ramp</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label style="font-size: 0.78rem;">Frekuensi: <span id="scope-freq-label" style="color: var(--orange-primary); font-family: monospace;">50 Hz</span></label>
+                <input type="range" id="scope-freq-slider" min="10" max="150" value="50" step="5">
+              </div>
+
+              <div class="input-group">
+                <label style="font-size: 0.78rem;">Amplitudo: <span id="scope-volt-label" style="color: var(--orange-primary); font-family: monospace;">5.0 V</span></label>
+                <input type="range" id="scope-volt-slider" min="1" max="15" value="5" step="0.5">
+              </div>
+
+              <div style="display: flex; align-items: flex-end;">
+                <button type="button" id="scope-freeze-btn" class="btn btn-sm btn-secondary" style="width: 100%;">
+                  ⏸️ Bekukan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRESS BELAJAR SISWA SECTION -->
+    <section class="section" id="progress-section" style="padding-top: 0;">
+      <div class="container">
+        <div class="progress-card">
+          <div class="progress-header">
+            <div class="progress-title-wrap">
+              <span class="section-tag">Pelacak Mandiri</span>
+              <h3>Progress Belajar Siswa</h3>
+              <p>Kemajuan membaca teori, penyelesaian simulasi & praktik laboratorium, serta nilai kuis Anda tersimpan otomatis di peramban ini.</p>
+            </div>
+            <div>
+              <button type="button" id="btn-reset-progress" class="btn btn-sm btn-danger-outline">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
+                Reset Progress
+              </button>
+            </div>
+          </div>
+
+          <!-- Progress Bar Global -->
+          <div style="display: flex; justify-content: space-between; font-size: 0.88rem; font-weight: 800; margin-bottom: 0.5rem;">
+            <span>Persentase Penguasaan Kompetensi</span>
+            <span class="global-progress-text" style="color: var(--orange-primary);">0%</span>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill global-progress-fill" style="width: 0%;"></div>
+          </div>
+
+          <!-- Quick Stats Grid -->
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-value" id="stat-materi-count">0/11</div>
+              <div class="stat-label">Materi Teori Tuntas</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value" id="stat-praktik-count" style="color: var(--amber-gold);">0/6</div>
+              <div class="stat-label">Praktik Lab Dicoba</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value" id="stat-quiz-score" style="color: var(--emerald-accent);">-</div>
+              <div class="stat-label">Skor Uji Kuis Terakhir</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value" style="color: #ffffff;">Kelas X</div>
+              <div class="stat-label">Tingkat Vokasi SMK</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JALUR BELAJAR (LEARNING ROADMAP) SECTION -->
+    <section class="section" id="roadmap-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Kurikulum Terstruktur</span>
+          <h2 class="section-title">Jalur Belajar TEI Kelas 10</h2>
+          <p class="section-desc">
+            Peta jalan kompetensi keahlian yang dirancang runtut dari keselamatan kerja dasar bengkel hingga otomasi sistem industri modern.
+          </p>
+        </div>
+
+        <div class="roadmap-flow">
+          <!-- Step 1 -->
+          <a href="materi.html#materi-1" class="roadmap-step">
+            <div class="roadmap-num">1</div>
+            <div class="roadmap-title">K3 & Bengkel</div>
+            <span class="roadmap-badge">Keselamatan Kerja</span>
+          </a>
+
+          <!-- Step 2 -->
+          <a href="materi.html#materi-2" class="roadmap-step">
+            <div class="roadmap-num">2</div>
+            <div class="roadmap-title">Listrik Dasar</div>
+            <span class="roadmap-badge">V, I, R, & P</span>
+          </a>
+
+          <!-- Step 3 -->
+          <a href="materi.html#materi-3" class="roadmap-step">
+            <div class="roadmap-num">3</div>
+            <div class="roadmap-title">Rangkaian</div>
+            <span class="roadmap-badge">Seri & Paralel</span>
+          </a>
+
+          <!-- Step 4 -->
+          <a href="materi.html#materi-4" class="roadmap-step">
+            <div class="roadmap-num">4</div>
+            <div class="roadmap-title">Komponen Pasif</div>
+            <span class="roadmap-badge">R, L, & C</span>
+          </a>
+
+          <!-- Step 5 -->
+          <a href="materi.html#materi-5" class="roadmap-step">
+            <div class="roadmap-num">5</div>
+            <div class="roadmap-title">Komponen Aktif</div>
+            <span class="roadmap-badge">Dioda & Transistor</span>
+          </a>
+
+          <!-- Step 6 -->
+          <a href="materi.html#materi-6" class="roadmap-step">
+            <div class="roadmap-num">6</div>
+            <div class="roadmap-title">Alat Ukur</div>
+            <span class="roadmap-badge">Multimeter & Uji</span>
+          </a>
+
+          <!-- Step 7 -->
+          <a href="materi.html#materi-7" class="roadmap-step">
+            <div class="roadmap-num">7</div>
+            <div class="roadmap-title">Solder & PCB</div>
+            <span class="roadmap-badge">Perakitan & Lab</span>
+          </a>
+
+          <!-- Step 8 -->
+          <a href="materi.html#materi-8" class="roadmap-step">
+            <div class="roadmap-num">8</div>
+            <div class="roadmap-title">Digital & Gerbang</div>
+            <span class="roadmap-badge">Rangkai (AB+CD)E</span>
+          </a>
+
+          <!-- Step 9 -->
+          <a href="materi.html#materi-9" class="roadmap-step">
+            <div class="roadmap-num">9</div>
+            <div class="roadmap-title">Arduino & MCU</div>
+            <span class="roadmap-badge">Mikrokontroler</span>
+          </a>
+
+          <!-- Step 10 -->
+          <a href="materi.html#materi-10" class="roadmap-step">
+            <div class="roadmap-num">10</div>
+            <div class="roadmap-title">Otomasi & PLC</div>
+            <span class="roadmap-badge">Sistem Industri</span>
+          </a>
+
+          <!-- Step 11 -->
+          <a href="materi.html#materi-11" class="roadmap-step">
+            <div class="roadmap-num">11</div>
+            <div class="roadmap-title">Tabel Periodik 3D</div>
+            <span class="roadmap-badge">Eksplorasi Unsur</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MINI KALKULATOR HUKUM OHM INTERAKTIF DI BERANDA -->
+    <section class="section" id="quick-calc-section">
+      <div class="container">
+        <div class="hero-grid" style="align-items: center;">
+          <div>
+            <span class="section-tag">Fitur Praktis</span>
+            <h2 class="section-title">Kalkulator Interaktif Hukum Ohm</h2>
+            <p class="section-desc" style="margin-bottom: 1.5rem;">
+              Hukum Ohm menyatakan bahwa kuat arus listrik yang mengalir melalui suatu penghantar berbanding lurus dengan beda potensial (tegangan) dan berbanding terbalik dengan hambatan listriknya:
+            </p>
+            <div class="callout callout-info">
+              <div class="callout-title">Rumus Dasar Hukum Ohm:</div>
+              <p style="font-family: monospace; font-size: 1.1rem; margin-bottom: 0;">
+                <strong>I = V / R</strong> &nbsp;|&nbsp; <strong>V = I × R</strong> &nbsp;|&nbsp; <strong>P = V × I</strong>
+              </p>
+            </div>
+            <p style="font-size: 0.92rem; color: var(--text-muted);">
+              Uji coba nilai tegangan dan hambatan Anda langsung pada panel di samping untuk melihat besarnya arus listrik dan daya disipasi panas yang timbul.
+            </p>
+          </div>
+
+          <!-- Card Kalkulator Ohm -->
+          <div class="calc-card">
+            <div class="calc-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+              Hitung Arus & Daya Listrik
+            </div>
+            <div class="calc-subtitle">Masukkan nilai Tegangan (Volt) dan Hambatan (Ohm)</div>
+
+            <div class="calc-grid">
+              <div class="input-group">
+                <label for="calc-v">Tegangan (V):</label>
+                <div class="input-field-wrap">
+                  <input type="number" id="calc-v" class="input-field" value="12" min="0" step="any">
+                  <span class="input-unit">Volt</span>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="calc-r">Hambatan (R):</label>
+                <div class="input-field-wrap">
+                  <input type="number" id="calc-r" class="input-field" value="220" min="0.1" step="any">
+                  <span class="input-unit">Ω</span>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" id="btn-calc-ohm" class="btn btn-primary" style="width: 100%;">
+              Hitung Sekarang
+            </button>
+
+            <div class="calc-result-box">
+              <div class="calc-result-label">Kuat Arus Listrik (I):</div>
+              <div class="calc-result-val" id="calc-res-i">0.055 A (54.5 mA)</div>
+              
+              <div class="calc-result-label" style="margin-top: 0.8rem;">Daya Disipasi (P):</div>
+              <div style="font-size: 1.25rem; font-weight: 800; color: var(--text-white); font-family: monospace;" id="calc-res-p">
+                0.655 W
+              </div>
+
+              <div class="calc-formula-step" id="calc-step-formula">
+                Langkah: I = 12 V / 220 Ω = 0.0545 A | P = 12 V × 0.0545 A = 0.655 Watt
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FITUR UTAMA PLATFORM -->
+    <section class="section" style="background: rgba(14, 17, 23, 0.6); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Simulasi Lengkap & Menarik</span>
+          <h2 class="section-title">Interaktivitas Tanpa Rasa Bosan</h2>
+          <p class="section-desc">Eksplorasi konsep elektronika dengan simulasi visual langsung yang estetis dan menyenangkan.</p>
+        </div>
+
+        <div class="card-grid">
+          <!-- Card 1: Generator Rangkaian Boolean -->
+          <div class="card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h2v2H4V6zm0 5h2v2H4v-2zm0 5h2v2H4v-2zm14-10h2v2h-2V6zm0 5h2v2h-2v-2zm0 5h2v2h-2v-2zM6 4h2v2H6V4zm5 0h2v2h-2V4zm5 0h2v2h-2V4zM6 18h2v2H6v-2zm5 0h2v2h-2v-2zm5 0h2v2h-2v-2zM8 8h8v8H8V8z"/></svg>
+            </div>
+            <h3 class="card-title">Generator Rangkaian (AB+CD)E</h3>
+            <p class="card-desc">Ketikkan ekspresi logika boolean apa saja, sirkuit gerbang logika akan terbuat otomatis dengan kabel beranimasi oranye yang menyala saat sinyal 1!</p>
+            <a href="materi.html#materi-8" class="btn btn-sm btn-outline-orange">Rancang Rangkaian &rarr;</a>
+          </div>
+
+          <!-- Card 2: Simulator Solder Lab -->
+          <div class="card">
+            <div class="card-icon" style="color: var(--amber-gold); border-color: rgba(255, 183, 3, 0.35); background: rgba(255, 183, 3, 0.12);">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+            </div>
+            <h3 class="card-title">Simulator Menyolder PCB</h3>
+            <p class="card-desc">Latihan menyolder virtual dengan kontrol suhu, lelehan timah mengkilap, partikel uap asap melayang, serta penilaian kualitas sambungan.</p>
+            <a href="materi.html#materi-7" class="btn btn-sm btn-outline-orange">Buka Solder Lab &rarr;</a>
+          </div>
+
+          <!-- Card 3: 6 Proyek Praktik -->
+          <div class="card">
+            <div class="card-icon" style="color: var(--emerald-accent); border-color: rgba(16, 185, 129, 0.35); background: rgba(16, 185, 129, 0.12);">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+            </div>
+            <h3 class="card-title">6 Proyek Praktikum Lab</h3>
+            <p class="card-desc">Panduan perakitan LED, sensor LDR, sensor suhu NTC, push button, saklar relay isolasi 12V, dan pemrograman Arduino Uno Blink.</p>
+            <a href="praktik.html" class="btn btn-sm btn-outline-orange">Lihat Proyek &rarr;</a>
+          </div>
+
+          <!-- Card 4: Kuis 25 Soal -->
+          <div class="card">
+            <div class="card-icon" style="color: #ffffff; border-color: rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.08);">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <h3 class="card-title">Kuis Evaluasi 25 Soal</h3>
+            <p class="card-desc">Uji pemahaman komprehensif 1 soal per layar lengkap dengan skor otomatis, pembahasan ilmiah mendalam, dan penyimpanan riwayat.</p>
+            <a href="quiz.html" class="btn btn-sm btn-outline-orange">Mulai Kuis &rarr;</a>
+          </div>
+
+          <!-- Card 5: Periodic Table -->
+          <div class="card">
+            <div class="card-icon" style="color: #a7f3d0; border-color: rgba(16, 185, 129, 0.35); background: rgba(16, 185, 129, 0.12);">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v16H4V4zm2 2v3h3V6H6zm5 0v3h3V6h-3zm5 0v3h2V6h-2zM6 11v3h3v-3H6zm5 0v3h3v-3h-3zm5 0v3h2v-3h-2zM6 16v2h3v-2H6zm5 0v2h3v-2h-3zm5 0v2h2v-2h-2z"/></svg>
+            </div>
+            <h3 class="card-title">Tabel Periodik 3D</h3>
+            <p class="card-desc">Jelajahi 118 unsur dalam mode Grid, Sphere, dan Helix dengan detail kategori serta animasi transformasi interaktif.</p>
+            <a href="materi.html#materi-11" class="btn btn-sm btn-outline-orange">Buka Tabel Periodik &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand-logo" style="margin-bottom: 0.8rem;">
+          <div class="brand-icon" style="width: 34px; height: 34px;">
+            <svg viewBox="0 0 24 24"><path d="M4 6h2v2H4V6zm0 5h2v2H4v-2zm0 5h2v2H4v-2zm14-10h2v2h-2V6zm0 5h2v2h-2v-2zm0 5h2v2h-2v-2zM6 4h2v2H6V4zm5 0h2v2h-2V4zm5 0h2v2h-2V4zM6 18h2v2H6v-2zm5 0h2v2h-2v-2zm5 0h2v2h-2v-2zM8 8h8v8H8V8z"/></svg>
+          </div>
+          <div class="brand-text">TEI <span>CLASS X</span></div>
+        </div>
+        <p>
+          Media Pembelajaran Mandiri Siswa SMK Jurusan Teknik Elektronika Industri (TEI). Dibangun murni dengan HTML5, CSS3, dan JavaScript tanpa framework luar.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navigasi Cepat</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Beranda Utama</a></li>
+          <li><a href="materi.html">11 Modul Materi</a></li>
+          <li><a href="praktik.html">Praktik Elektronika</a></li>
+          <li><a href="quiz.html">Kuis Evaluasi</a></li>
+          <li><a href="tentang.html">Tentang Kurikulum</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Simulasi Unggulan</h5>
+        <ul class="footer-links">
+          <li><a href="materi.html#materi-8">Generator Rangkaian (AB+CD)E</a></li>
+          <li><a href="materi.html#materi-7">Simulator Solder PCB Lab</a></li>
+          <li><a href="#quick-calc-section">Kalkulator Hukum Ohm</a></li>
+          <li><a href="materi.html#materi-4">Kalkulator Warna Resistor</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Standar Vokasi</h5>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">
+          Berdasarkan Capaian Pembelajaran (CP) Fase E SMK Pusat Keunggulan Bidang Keahlian Teknologi Manufaktur dan Rekayasa.
+        </p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 TEI CLASS X — Media Edukasi Teknik Elektronika Industri SMK. Dibuat dengan HTML, CSS, dan JavaScript murni.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/progress.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

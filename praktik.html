@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktik Laboratorium Elektronika — TEI CLASS X</title>
+  <meta name="description" content="6 Proyek Praktikum Dasar Elektronika Industri Kelas 10. Skematik rangkaian, alat bahan, langkah kerja, dan catatan K3.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="TEI CLASS X Beranda">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 6h2v2H4V6zm0 5h2v2H4v-2zm0 5h2v2H4v-2zm14-10h2v2h-2V6zm0 5h2v2h-2v-2zm0 5h2v2h-2v-2zM6 4h2v2H6V4zm5 0h2v2h-2V4zm5 0h2v2h-2V4zM6 18h2v2H6v-2zm5 0h2v2h-2v-2zm5 0h2v2h-2v-2zM8 8h8v8H8V8z"/></svg>
+        </div>
+        <div class="brand-text">TEI <span>CLASS X</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link">Beranda</a></li>
+          <li><a href="materi.html" class="nav-link">Materi</a></li>
+          <li><a href="praktik.html" class="nav-link active">Praktik</a></li>
+          <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+          <li><a href="tentang.html" class="nav-link">Tentang</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-extra">
+        <div class="nav-progress-badge">
+          <span class="nav-progress-circle"></span>
+          <span id="nav-progress-text">0% Selesai</span>
+        </div>
+        <button class="hamburger" id="hamburger-btn" aria-label="Buka Menu" aria-expanded="false">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main>
+    <div class="container">
+      
+      <!-- PAGE HEADER -->
+      <div class="section-header">
+        <span class="section-tag">Hands-on Laboratorium</span>
+        <h1 class="section-title">Praktik Elektronika Industri</h1>
+        <p class="section-desc">
+          Enam proyek perakitan sirkuit nyata untuk melatih keterampilan praktikum, perakitan breadboard, analisis kerja komponen, dan penerapan K3 bengkel.
+        </p>
+      </div>
+
+      <!-- PROYEK PRAKTIK 1 -->
+      <article class="project-card" id="praktik-1">
+        <div class="project-header">
+          <div>
+            <span class="badge badge-orange" style="margin-bottom: 0.3rem;">PROYEK 01</span>
+            <h2 class="project-title">LED dengan Resistor Pembatas Arus</h2>
+          </div>
+          <button type="button" class="btn btn-sm btn-secondary praktik-toggle-btn" data-praktik-id="praktik-1">
+            Tandai Telah Dicoba
+          </button>
+        </div>
+
+        <div class="project-body">
+          <h4>1. Tujuan Praktikum</h4>
+          <p>
+            Memahami fungsi resistor sebagai pembatas arus (current limiter) untuk mencegah LED terbakar akibat kelebihan arus listrik, serta mengukur drop tegangan maju (forward voltage) pada LED.
+          </p>
+
+          <h4>2. Daftar Komponen & Alat</h4>
+          <ul class="component-checklist">
+            <li class="component-item"><span class="component-bullet"></span> Baterai / Catu Daya DC 9 Volt</li>
+            <li class="component-item"><span class="component-bullet"></span> LED 5mm Warna Merah (Vf = 2.0V, If = 20mA)</li>
+            <li class="component-item"><span class="component-bullet"></span> Resistor 470 Ω (0.25 Watt)</li>
+            <li class="component-item"><span class="component-bullet"></span> Breadboard (Project Board) & Kabel Jumper</li>
+            <li class="component-item"><span class="component-bullet"></span> Multimeter Digital</li>
+          </ul>
+
+          <h4>3. Diagram Skematik Rangkaian</h4>
+          <div class="schematic-wrapper">
+            <svg viewBox="0 0 450 140" width="450" height="140">
+              <text x="30" y="75" fill="#ff8c00" font-family="monospace" font-size="12">+9V DC</text>
+              <line x1="80" y1="70" x2="130" y2="70" stroke="#ff6b00" stroke-width="2.5"/>
+              
+              <!-- Resistor R1 -->
+              <path d="M 130 70 L 140 70 L 145 60 L 155 80 L 165 60 L 175 80 L 185 60 L 190 70 L 200 70" stroke="#ffb703" stroke-width="2.5" fill="none"/>
+              <text x="145" y="45" fill="#ffb703" font-family="monospace" font-size="12">R1: 470 Ω</text>
+
+              <line x1="200" y1="70" x2="250" y2="70" stroke="#ff6b00" stroke-width="2.5"/>
+
+              <!-- LED 1 -->
+              <polygon points="250,55 250,85 275,70" fill="#ef4444"/>
+              <line x1="275" y1="55" x2="275" y2="85" stroke="#ffffff" stroke-width="2.5"/>
+              <!-- Light Arrows -->
+              <path d="M 265 52 L 275 40 M 275 40 L 268 41 M 275 40 L 274 47" stroke="#ffb703" stroke-width="1.5" fill="none"/>
+              <path d="M 275 52 L 285 40 M 285 40 L 278 41 M 285 40 L 284 47" stroke="#ffb703" stroke-width="1.5" fill="none"/>
+              <text x="250" y="105" fill="#ef4444" font-family="monospace" font-size="12">LED MERAH</text>
+
+              <line x1="275" y1="70" x2="340" y2="70" stroke="#ff6b00" stroke-width="2.5"/>
+              <circle cx="340" cy="70" r="4" fill="#ff6b00"/>
+              <text x="355" y="75" fill="#94a3b8" font-family="monospace" font-size="12">GND (0V)</text>
+            </svg>
+            <div class="schematic-caption">Gambar 1: Skematik Sirkuit Pembatas Arus LED 9V</div>
+          </div>
+
+          <h4>4. Langkah Kerja</h4>
+          <ol class="step-list">
+            <li class="step-item">Pasang resistor 470 Ω pada breadboard. Hubungkan salah satu ujung resistor ke jalur positif (+) catu daya.</li>
+            <li class="step-item">Pasang kaki Anoda LED (kaki yang lebih panjang) terhubung ke ujung kaki resistor lainnya.</li>
+            <li class="step-item">Hubungkan kaki Katoda LED (kaki yang lebih pendek, sisi bodi pipih) ke jalur Ground (GND/negatif).</li>
+            <li class="step-item">Hubungkan baterai 9V dan amati nyala cahaya LED.</li>
+            <li class="step-item">Gunakan Multimeter pada mode DCV untuk mengukur tegangan pada kedua kaki LED (V_LED) dan tegangan pada resistor (V_R).</li>
+          </ol>
+
+          <h4>5. Hasil yang Diharapkan</h4>
+          <p>
+            LED menyala terang stabil tanpa kepanasan. Tegangan pada LED terukur berkisar <strong>1.9V - 2.1V</strong>, dan tegangan sisa pada resistor terukur berkisar <strong>6.9V - 7.1V</strong>. Arus rangkaian berkisar <strong>14.8 mA</strong>.
+          </p>
+
+          <div class="callout callout-warning">
+            <div class="callout-title">Catatan Keselamatan (K3):</div>
+            Jangan pernah menghubungkan LED langsung ke baterai 9V tanpa resistor! Tanpa hambatan pembatas, arus lonjakan seketika akan meledakkan lensa kristal LED atau memutuskan sambungan bond wire internal dalam hitungan milidetik.
+          </div>
+        </div>
+      </article>
+
+      <!-- PROYEK PRAKTIK 2 -->
+      <article class="project-card" id="praktik-2">
+        <div class="project-header">
+          <div>
+            <span class="badge badge-orange" style="margin-bottom: 0.3rem;">PROYEK 02</span>
+            <h2 class="project-title">Lampu Otomatis Menggunakan Sensor Cahaya LDR & Transistor</h2>
+          </div>
+          <button type="button" class="btn btn-sm btn-secondary praktik-toggle-btn" data-praktik-id="praktik-2">
+            Tandai Telah Dicoba
+          </button>
+        </div>
+
+        <div class="project-body">
+          <h4>1. Tujuan Praktikum</h4>
+          <p>
+            Merancang sirkuit saklar otomatis sederhana (automatic twilight switch) yang menyalakan lampu ketika kondisi ruangan gelap dan mematikan lampu saat ruangan terang benderang.
+          </p>
+
+          <h4>2. Daftar Komponen & Alat</h4>
+          <ul class="component-checklist">
+            <li class="component-item"><span class="component-bullet"></span> Sensor Cahaya LDR (Light Dependent Resistor 5mm)</li>
+            <li class="component-item"><span class="component-bullet"></span> Transistor BJT NPN (tipe 2N2222 atau BC547)</li>
+            <li class="component-item"><span class="component-bullet"></span> Potensiometer / Trimmer 50 kΩ (pengatur sensitivitas)</li>
+            <li class="component-item"><span class="component-bullet"></span> Resistor 1 kΩ & Resistor 330 Ω</li>
+            <li class="component-item"><span class="component-bullet"></span> LED Super Bright Putih / Kuning</li>
+            <li class="component-item"><span class="component-bullet"></span> Catu daya DC 9V atau 12V</li>
+          </ul>
+
+          <h4>3. Diagram Skematik Rangkaian</h4>
+          <div class="schematic-wrapper">
+            <svg viewBox="0 0 450 160" width="450" height="160">
+              <line x1="50" y1="20" x2="400" y2="20" stroke="#ff6b00" stroke-width="2"/>
+              <text x="20" y="25" fill="#ff6b00" font-family="monospace" font-size="12">+9V</text>
+
+              <!-- Potentiometer Top -->
+              <path d="M 100 20 L 100 45 L 95 50 L 105 55 L 95 60 L 105 65 L 100 70 L 100 80" stroke="#ffb703" stroke-width="2" fill="none"/>
+              <text x="35" y="60" fill="#ffb703" font-family="monospace" font-size="11">VR 50k</text>
+
+              <circle cx="100" cy="80" r="4" fill="#ff6b00"/>
+              <line x1="100" y1="80" x2="220" y2="80" stroke="#ff6b00" stroke-width="2"/>
+
+              <!-- LDR Bottom to GND -->
+              <circle cx="100" cy="110" r="10" stroke="#ffa940" stroke-width="1.5" fill="none"/>
+              <line x1="100" y1="80" x2="100" y2="100" stroke="#ff6b00" stroke-width="2"/>
+              <line x1="100" y1="120" x2="100" y2="140" stroke="#ff6b00" stroke-width="2"/>
+              <text x="45" y="115" fill="#ffa940" font-family="monospace" font-size="11">LDR</text>
+
+              <!-- Transistor 2N2222 -->
+              <line x1="220" y1="80" x2="245" y2="80" stroke="#ff6b00" stroke-width="2"/>
+              <line x1="245" y1="65" x2="245" y2="95" stroke="#ffffff" stroke-width="2.5"/>
+              <line x1="245" y1="70" x2="280" y2="50" stroke="#ff6b00" stroke-width="2"/>
+              <line x1="280" y1="50" x2="280" y2="20" stroke="#ff6b00" stroke-width="2"/>
+              <text x="290" y="38" fill="#ffb703" font-family="monospace" font-size="11">R_LED 330Ω + LED</text>
+              <line x1="245" y1="90" x2="280" y2="110" stroke="#ff6b00" stroke-width="2"/>
+              <polygon points="275,102 280,110 270,110" fill="#ff6b00"/>
+              <line x1="280" y1="110" x2="280" y2="140" stroke="#ff6b00" stroke-width="2"/>
+              <text x="245" y="115" fill="#ff8c00" font-family="monospace" font-size="11">NPN (BC547)</text>
+
+              <line x1="50" y1="140" x2="400" y2="140" stroke="#94a3b8" stroke-width="2"/>
+              <text x="20" y="145" fill="#94a3b8" font-family="monospace" font-size="12">GND</text>
+            </svg>
+            <div class="schematic-caption">Gambar 2: Skematik Saklar Sensor Cahaya Otomatis LDR & Transistor NPN</div>
+          </div>
+
+          <h4>4. Langkah Kerja</h4>
+          <ol class="step-list">
+            <li class="step-item">Susun potensiometer 50k dan LDR membentuk rangkaian pembagi tegangan (voltage divider).</li>
+            <li class="step-item">Hubungkan titik tengah pertemuan potensiometer dan LDR ke pin Basis transistor NPN melalui resistor pembatas basis 1 kΩ.</li>
+            <li class="step-item">Hubungkan kaki Emitor transistor ke jalur Ground (GND).</li>
+            <li class="step-item">Pasang resistor 330 Ω dan LED secara seri antara kutub positif catu daya dan kaki Kolektor transistor.</li>
+            <li class="step-item">Nyalakan catu daya. Tutupi permukaan LDR dengan jari/kertas hitam; lampu LED akan menyala otomatis. Buka kembali penutup, LED akan padam.</li>
+            <li class="step-item">Putar tuas potensiometer untuk mengkalibrasi tingkat sensitivitas kegelapan yang diinginkan.</li>
+          </ol>
+
+          <h4>5. Hasil yang Diharapkan</h4>
+          <p>
+            Saat gelap, resistansi LDR meningkat tinggi (>100 kΩ) sehingga tegangan pembagi pada Basis transistor naik melampaui 0.7V. Transistor mengalami saturasi (ON) dan mengalirkan arus kolektor untuk menyalakan LED.
+          </p>
+
+          <div class="callout callout-warning">
+            <div class="callout-title">Catatan Keselamatan (K3):</div>
+            Pastikan tidak tertukar antara kaki Basis, Kolektor, dan Emitor transistor BC547/2N2222. Periksa datasheet pinout dengan seksama menghadap permukaan datar transistor.
+          </div>
+        </div>
+      </article>
+
+      <!-- PROYEK PRAKTIK 3 -->
+      <article class="project-card" id="praktik-3">
+        <div class="project-header">
+          <div>
+            <span class="badge badge-orange" style="margin-bottom: 0.3rem;">PROYEK 03</span>
+            <h2 class="project-title">Indikator Suhu Sederhana Menggunakan Thermistor NTC</h2>
+          </div>
+          <button type="button" class="btn btn-sm btn-secondary praktik-toggle-btn" data-praktik-id="praktik-3">
+            Tandai Telah Dicoba
+          </button>
+        </div>
+
+        <div class="project-body">
+          <h4>1. Tujuan Praktikum</h4>
+          <p>
+            Mempelajari karakteristik termal thermistor tipe NTC (Negative Temperature Coefficient) dan memanfaatkannya sebagai sensor batas suhu (alarm overheating panas).
+          </p>
+
+          <h4>2. Daftar Komponen & Alat</h4>
+          <ul class="component-checklist">
+            <li class="component-item"><span class="component-bullet"></span> Thermistor NTC 10 kΩ</li>
+            <li class="component-item"><span class="component-bullet"></span> Resistor 10 kΩ (0.25 Watt)</li>
+            <li class="component-item"><span class="component-bullet"></span> Transistor NPN (2N2222 atau BD139)</li>
+            <li class="component-item"><span class="component-bullet"></span> Buzzer DC 5V / 12V atau LED Indikator Merah</li>
+            <li class="component-item"><span class="component-bullet"></span> Sumber panas aman (ujung solder hangat berjarak aman)</li>
+          </ul>
+
+          <h4>3. Diagram Skematik Rangkaian</h4>
+          <div class="schematic-wrapper">
+            <svg viewBox="0 0 450 140" width="450" height="140">
+              <text x="30" y="30" fill="#ff6b00" font-family="monospace" font-size="12">+12V DC</text>
+              <line x1="90" y1="25" x2="380" y2="25" stroke="#ff6b00" stroke-width="2"/>
+
+              <text x="120" y="45" fill="#ffb703" font-family="monospace" font-size="11">NTC 10k (Suhu Naik R Turun)</text>
+              <rect x="130" y="50" width="40" height="20" stroke="#ffb703" stroke-width="2" fill="none"/>
+              <line x1="120" y1="75" x2="180" y2="45" stroke="#ffb703" stroke-width="1.5"/>
+
+              <path d="M 150 70 L 150 85 L 145 90 L 155 95 L 145 100 L 155 105 L 150 110 L 150 120" stroke="#ff8c00" stroke-width="2" fill="none"/>
+              <text x="160" y="105" fill="#ff8c00" font-family="monospace" font-size="11">R 10k</text>
+
+              <circle cx="150" cy="77" r="4" fill="#ff6b00"/>
+              <line x1="150" y1="77" x2="250" y2="77" stroke="#ff6b00" stroke-width="2"/>
+
+              <line x1="270" y1="65" x2="270" y2="95" stroke="#ffffff" stroke-width="2"/>
+              <line x1="270" y1="70" x2="300" y2="50" stroke="#ff6b00" stroke-width="2"/>
+              <line x1="300" y1="50" x2="300" y2="25" stroke="#ff6b00" stroke-width="2"/>
+              <rect x="290" y="30" width="30" height="15" stroke="#ef4444" stroke-width="1.5" fill="#ef444433"/>
+              <text x="325" y="42" fill="#ef4444" font-family="monospace" font-size="10">ALARM BUZZER</text>
+
+              <line x1="270" y1="90" x2="300" y2="110" stroke="#ff6b00" stroke-width="2"/>
+              <line x1="300" y1="110" x2="300" y2="125" stroke="#ff6b00" stroke-width="2"/>
+
+              <line x1="90" y1="125" x2="380" y2="125" stroke="#94a3b8" stroke-width="2"/>
+              <text x="30" y="130" fill="#94a3b8" font-family="monospace" font-size="12">GND (0V)</text>
+            </svg>
+            <div class="schematic-caption">Gambar 3: Skematik Alarm Indikator Overheat Suhu NTC</div>
+          </div>
+
+          <h4>4. Langkah Kerja</h4>
+          <ol class="step-list">
+            <li class="step-item">Rangkai thermistor NTC di sisi atas (terhubung ke +12V) dan resistor 10k di sisi bawah (terhubung ke GND).</li>
+            <li class="step-item">Hubungkan titik pertemuan keduanya ke Basis transistor NPN BD139 melalui resistor pengaman 1 kΩ.</li>
+            <li class="step-item">Pasang buzzer DC pada jalur Kolektor transistor menuju VCC (+12V).</li>
+            <li class="step-item">Nyalakan sirkuit pada suhu kamar normal (25°C - 28°C), buzzer dalam kondisi hening/mati.</li>
+            <li class="step-item">Dekatkan sumber hangat ke kepala NTC pada jarak aman 5 cm.</li>
+            <li class="step-item">Perhatikan: saat suhu NTC naik, buzzer mulai berbunyi nyaring menandakan batas ambang bahaya suhu tercapai.</li>
+          </ol>
+
+          <h4>5. Hasil yang Diharapkan</h4>
+          <p>
+            Thermistor NTC mengalami penurunan nilai hambatan drastis saat dipanaskan (dari 10 kΩ turun hingga di bawah 2 kΩ), membuat tegangan basis melonjak naik melampaui 0.7V dan memicu saklar transistor menyalakan buzzer.
+          </p>
+
+          <div class="callout callout-warning">
+            <div class="callout-title">Catatan Keselamatan (K3):</div>
+            Jangan menempelkan ujung mata solder langsung ke badan komponen thermistor! Suhu solder yang mencapai 350°C akan meremukkan badan keramik thermistor seketika.
+          </div>
+        </div>
+      </article>
+
+      <!-- PROYEK PRAKTIK 4 -->
+      <article class="project-card" id="praktik-4">
+        <div class="project-header">
+          <div>
+            <span class="badge badge-orange" style="margin-bottom: 0.3rem;">PROYEK 04</span>
+            <h2 class="project-title">Push Button + LED dengan Rangkaian Resistor Pull-Down</h2>
+          </div>
+          <button type="button" class="btn btn-sm btn-secondary praktik-toggle-btn" data-praktik-id="praktik-4">
+            Tandai Telah Dicoba
+          </button>
+        </div>
+
+        <div class="project-body">
+          <h4>1. Tujuan Praktikum</h4>
+          <p>
+            Mempelajari konsep input digital saklar tombol tekan (tactile switch) dan pentingnya resistor pull-down untuk mencegah kondisi status mengambang (floating logic state).
+          </p>
+
+          <h4>2. Daftar Komponen & Alat</h4>
+          <ul class="component-checklist">
+            <li class="component-item"><span class="component-bullet"></span> Tactile Push Button 4-pin</li>
+            <li class="component-item"><span class="component-bullet"></span> Resistor Pull-Down 10 kΩ</li>
+            <li class="component-item"><span class="component-bullet"></span> Resistor Pembatas LED 330 Ω</li>
+            <li class="component-item"><span class="component-bullet"></span> LED Indikator Hijau 5mm</li>
+            <li class="component-item"><span class="component-bullet"></span> Baterai 5V DC (atau USB power supply)</li>
+          </ul>
+
+          <h4>3. Diagram Skematik Rangkaian</h4>
+          <div class="schematic-wrapper">
+            <svg viewBox="0 0 450 140" width="450" height="140">
+              <text x="30" y="30" fill="#ff6b00" font-family="monospace" font-size="12">+5V DC</text>
+              <line x1="80" y1="25" x2="380" y2="25" stroke="#ff6b00" stroke-width="2"/>
+
+              <!-- Button -->
+              <line x1="120" y1="25" x2="120" y2="50" stroke="#ff6b00" stroke-width="2"/>
+              <circle cx="120" cy="50" r="3" fill="#ff6b00"/>
+              <circle cx="120" cy="70" r="3" fill="#ff6b00"/>
+              <line x1="110" y1="58" x2="135" y2="52" stroke="#ffb703" stroke-width="2.5"/>
+              <text x="60" y="62" fill="#ffb703" font-family="monospace" font-size="11">BUTTON</text>
+
+              <circle cx="120" cy="70" r="4" fill="#ff6b00"/>
+              <line x1="120" y1="70" x2="120" y2="85" stroke="#ff6b00" stroke-width="2"/>
+              <line x1="120" y1="70" x2="240" y2="70" stroke="#ff6b00" stroke-width="2"/>
+
+              <path d="M 120 85 L 115 90 L 125 95 L 115 100 L 125 105 L 120 110 L 120 125" stroke="#ffb703" stroke-width="2" fill="none"/>
+              <text x="135" y="105" fill="#ffb703" font-family="monospace" font-size="10">R_PULLDOWN 10k</text>
+
+              <path d="M 240 70 L 255 70 L 260 62 L 270 78 L 280 62 L 285 70 L 300 70" stroke="#ff8c00" stroke-width="2" fill="none"/>
+              <text x="255" y="55" fill="#ff8c00" font-family="monospace" font-size="10">R 330Ω</text>
+              <polygon points="300,58 300,82 320,70" fill="#10b981"/>
+              <line x1="320" y1="58" x2="320" y2="82" stroke="#ffffff" stroke-width="2"/>
+              <line x1="320" y1="70" x2="360" y2="70" stroke="#ff6b00" stroke-width="2"/>
+              <line x1="360" y1="70" x2="360" y2="125" stroke="#ff6b00" stroke-width="2"/>
+
+              <line x1="80" y1="125" x2="380" y2="125" stroke="#94a3b8" stroke-width="2"/>
+              <text x="30" y="130" fill="#94a3b8" font-family="monospace" font-size="12">GND (0V)</text>
+            </svg>
+            <div class="schematic-caption">Gambar 4: Skematik Sirkuit Tombol Tekan dengan Resistor Pull-Down</div>
+          </div>
+
+          <h4>4. Langkah Kerja</h4>
+          <ol class="step-list">
+            <li class="step-item">Pasang push button pada alur pembagi tengah breadboard.</li>
+            <li class="step-item">Hubungkan salah satu pin saklar ke rel catu daya positif +5V.</li>
+            <li class="step-item">Hubungkan pin saklar pasangannya ke kaki resistor 10 kΩ yang menuju GND (Pull-down).</li>
+            <li class="step-item">Ambil jalur kabel dari titik pertemuan tombol dan resistor pull-down menuju resistor 330 Ω dan LED hijau ke arah GND.</li>
+            <li class="step-item">Uji dengan menekan tombol: LED menyala saat ditekan dan padam seketika saat dilepas dengan kondisi logika pasti (0V atau 5V).</li>
+          </ol>
+
+          <h4>5. Hasil yang Diharapkan</h4>
+          <p>
+            Saat tombol terbuka (lepas), resistor pull-down menarik potensial titik input pasti ke 0 Volt (LOW riil), bukan mengambang liar. Saat tombol ditekan, arus mengalir melintas tombol dan memicu LED menyala terang (HIGH).
+          </p>
+
+          <div class="callout callout-info">
+            <div class="callout-title">Pentingnya Konsep Pull-Down / Pull-Up:</div>
+            Pada mikrokontroler digital seperti Arduino atau PLC, pin input yang tidak dipasangi resistor pull-up/pull-down akan mendeteksi sinyal acak (flicker) hanya karena tangan mendekat atau radiasi frekuensi listrik ruangan.
+          </div>
+        </div>
+      </article>
+
+      <!-- PROYEK PRAKTIK 5 -->
+      <article class="project-card" id="praktik-5">
+        <div class="project-header">
+          <div>
+            <span class="badge badge-orange" style="margin-bottom: 0.3rem;">PROYEK 05</span>
+            <h2 class="project-title">Pengendali Beban dengan Saklar Relay Sederhana & Dioda Flyback</h2>
+          </div>
+          <button type="button" class="btn btn-sm btn-secondary praktik-toggle-btn" data-praktik-id="praktik-5">
+            Tandai Telah Dicoba
+          </button>
+        </div>
+
+        <div class="project-body">
+          <h4>1. Tujuan Praktikum</h4>
+          <p>
+            Mengendalikan beban listrik berdaya lebih tinggi secara terisolasi menggunakan modul relay elektromagnetik 12V DC dan memahami fungsi krusial Dioda Flyback (Freewheeling Diode) untuk meredam arus balik induktif.
+          </p>
+
+          <h4>2. Daftar Komponen & Alat</h4>
+          <ul class="component-checklist">
+            <li class="component-item"><span class="component-bullet"></span> Modul Relay 12V DC 5-pin (Terminal COM, NO, NC, Coil A1-A2)</li>
+            <li class="component-item"><span class="component-bullet"></span> Dioda Penyearah 1N4007 (Flyback protection)</li>
+            <li class="component-item"><span class="component-bullet"></span> Transistor Penggerak NPN 2N2222 / BD139</li>
+            <li class="component-item"><span class="component-bullet"></span> Resistor Basis 1 kΩ & Saklar Toggle</li>
+            <li class="component-item"><span class="component-bullet"></span> Lampu Simulasi Beban 12V DC</li>
+          </ul>
+
+          <h4>3. Diagram Skematik Rangkaian</h4>
+          <div class="schematic-wrapper">
+            <svg viewBox="0 0 450 150" width="450" height="150">
+              <text x="20" y="25" fill="#ff6b00" font-family="monospace" font-size="12">+12V VCC</text>
+              <line x1="85" y1="20" x2="420" y2="20" stroke="#ff6b00" stroke-width="2"/>
+
+              <rect x="160" y="45" width="40" height="30" stroke="#ff8c00" stroke-width="2" fill="none"/>
+              <text x="145" y="40" fill="#ff8c00" font-family="monospace" font-size="10">COIL RELAY</text>
+              <line x1="180" y1="20" x2="180" y2="45" stroke="#ff6b00" stroke-width="2"/>
+
+              <line x1="225" y1="20" x2="225" y2="45" stroke="#ff6b00" stroke-width="1.5"/>
+              <polygon points="225,50 215,65 235,65" fill="#ffb703"/>
+              <line x1="215" y1="50" x2="235" y2="50" stroke="#ffffff" stroke-width="2"/>
+              <line x1="225" y1="65" x2="225" y2="75" stroke="#ff6b00" stroke-width="1.5"/>
+              <text x="235" y="60" fill="#ffb703" font-family="monospace" font-size="9">DIODA 1N4007</text>
+
+              <line x1="180" y1="75" x2="180" y2="90" stroke="#ff6b00" stroke-width="2"/>
+              <line x1="225" y1="75" x2="180" y2="75" stroke="#ff6b00" stroke-width="2"/>
+
+              <line x1="150" y1="105" x2="170" y2="105" stroke="#ff6b00" stroke-width="2"/>
+              <line x1="170" y1="95" x2="170" y2="115" stroke="#ffffff" stroke-width="2"/>
+              <line x1="170" y1="100" x2="180" y2="90" stroke="#ff6b00" stroke-width="2"/>
+              <line x1="170" y1="110" x2="180" y2="125" stroke="#ff6b00" stroke-width="2"/>
+              <polygon points="178,118 180,125 174,124" fill="#ff6b00"/>
+              <text x="90" y="108" fill="#ffb703" font-family="monospace" font-size="10">KONTROL (5V)</text>
+
+              <line x1="330" y1="20" x2="330" y2="55" stroke="#ff6b00" stroke-width="2"/>
+              <circle cx="330" cy="55" r="3" fill="#ff6b00"/>
+              <line x1="330" y1="55" x2="350" y2="70" stroke="#10b981" stroke-width="2"/>
+              <circle cx="355" cy="75" r="3" fill="#10b981"/>
+              <circle cx="370" cy="85" r="12" stroke="#ffb703" stroke-width="2" fill="#ffb70322"/>
+              <text x="365" y="89" fill="#ffb703" font-family="monospace" font-size="11">M</text>
+              <text x="390" y="89" fill="#ffb703" font-family="monospace" font-size="10">BEBAN MOTOR/LAMPU</text>
+              <line x1="370" y1="97" x2="370" y2="125" stroke="#ff6b00" stroke-width="2"/>
+
+              <line x1="85" y1="125" x2="420" y2="125" stroke="#94a3b8" stroke-width="2"/>
+              <text x="20" y="130" fill="#94a3b8" font-family="monospace" font-size="12">GND (0V)</text>
+            </svg>
+            <div class="schematic-caption">Gambar 5: Skematik Rangkaian Driver Relay 12V dengan Dioda Pengaman Flyback</div>
+          </div>
+
+          <h4>4. Langkah Kerja</h4>
+          <ol class="step-list">
+            <li class="step-item">Pasang relay pada breadboard. Pasang dioda 1N4007 secara paralel terbalik melintasi kedua pin koil relay (Katoda bergaris perak ke +12V, Anoda ke kaki Kolektor transistor).</li>
+            <li class="step-item">Hubungkan salah satu kaki koil ke sumber daya +12V, dan kaki koil lainnya ke Kolektor transistor NPN.</li>
+            <li class="step-item">Hubungkan Emitor transistor ke jalur Ground (GND).</li>
+            <li class="step-item">Hubungkan Basis transistor melalui resistor 1 kΩ ke saklar kontrol input.</li>
+            <li class="step-item">Hubungkan terminal relay COM ke +12V dan terminal NO ke lampu beban.</li>
+            <li class="step-item">Aktifkan saklar kontrol. Dengarkan bunyi "KLIK" mekanis relay saat kontak berpindah dan amati lampu beban menyala.</li>
+          </ol>
+
+          <h4>5. Hasil yang Diharapkan</h4>
+          <p>
+            Relay berhasil menghubungkan daya ke beban eksternal saat input basis aktif. Saat relay dimatikan mendadak, induksi medan magnet koil yang runtuh diserap aman oleh dioda flyback sehingga tidak merusak transistor penggerak.
+          </p>
+
+          <div class="callout callout-danger">
+            <div class="callout-title">Catatan Keselamatan (K3):</div>
+            Dalam praktikum Kelas 10, gunakan tegangan beban aman di bawah 24V DC! Jangan langsung menghubungkan terminal relay ke tegangan jala-jala PLN 220V AC sebelum mendapatkan supervisi ketat dari guru pembimbing bengkel.
+          </div>
+        </div>
+      </article>
+
+      <!-- PROYEK PRAKTIK 6 -->
+      <article class="project-card" id="praktik-6">
+        <div class="project-header">
+          <div>
+            <span class="badge badge-orange" style="margin-bottom: 0.3rem;">PROYEK 06</span>
+            <h2 class="project-title">Pemrograman Arduino: LED Blink & Running LED</h2>
+          </div>
+          <button type="button" class="btn btn-sm btn-secondary praktik-toggle-btn" data-praktik-id="praktik-6">
+            Tandai Telah Dicoba
+          </button>
+        </div>
+
+        <div class="project-body">
+          <h4>1. Tujuan Praktikum</h4>
+          <p>
+            Mengenal alur kerja pemrograman mikrokontroler Arduino Uno, menghubungkan board ke IDE komputer, menulis sketch dasar, serta mengontrol waktu kedip LED (timing delay).
+          </p>
+
+          <h4>2. Daftar Komponen & Alat</h4>
+          <ul class="component-checklist">
+            <li class="component-item"><span class="component-bullet"></span> Board Arduino Uno R3 & Kabel USB Tipe B</li>
+            <li class="component-item"><span class="component-bullet"></span> 3 Buah LED 5mm (Merah, Kuning, Hijau)</li>
+            <li class="component-item"><span class="component-bullet"></span> 3 Buah Resistor 220 Ω</li>
+            <li class="component-item"><span class="component-bullet"></span> Breadboard & Kabel Jumper Male-to-Male</li>
+            <li class="component-item"><span class="component-bullet"></span> Komputer/Laptop dengan Software Arduino IDE terinstal</li>
+          </ul>
+
+          <h4>3. Diagram Skematik Rangkaian</h4>
+          <div class="schematic-wrapper">
+            <svg viewBox="0 0 450 140" width="450" height="140">
+              <rect x="30" y="20" width="130" height="100" rx="8" stroke="#ff6b00" stroke-width="2" fill="#0c1018"/>
+              <text x="45" y="45" fill="#ff6b00" font-family="monospace" font-size="12" font-weight="bold">ARDUINO UNO</text>
+              <circle cx="50" cy="65" r="4" fill="#ffb703"/>
+              <text x="60" y="69" fill="#94a3b8" font-family="monospace" font-size="10">Pin D8 (Merah)</text>
+              <circle cx="50" cy="85" r="4" fill="#ffb703"/>
+              <text x="60" y="89" fill="#94a3b8" font-family="monospace" font-size="10">Pin D9 (Kuning)</text>
+              <circle cx="50" cy="105" r="4" fill="#ffb703"/>
+              <text x="60" y="109" fill="#94a3b8" font-family="monospace" font-size="10">Pin D10 (Hijau)</text>
+
+              <line x1="160" y1="65" x2="220" y2="65" stroke="#ef4444" stroke-width="2"/>
+              <line x1="160" y1="85" x2="220" y2="85" stroke="#eab308" stroke-width="2"/>
+              <line x1="160" y1="105" x2="220" y2="105" stroke="#10b981" stroke-width="2"/>
+
+              <rect x="220" y="60" width="30" height="10" stroke="#ffb703" stroke-width="1.5" fill="none"/>
+              <rect x="220" y="80" width="30" height="10" stroke="#ffb703" stroke-width="1.5" fill="none"/>
+              <rect x="220" y="100" width="30" height="10" stroke="#ffb703" stroke-width="1.5" fill="none"/>
+
+              <line x1="250" y1="65" x2="290" y2="65" stroke="#ef4444" stroke-width="2"/>
+              <polygon points="290,58 290,72 305,65" fill="#ef4444"/>
+              <line x1="305" y1="58" x2="305" y2="72" stroke="#ffffff" stroke-width="2"/>
+
+              <line x1="250" y1="85" x2="290" y2="85" stroke="#eab308" stroke-width="2"/>
+              <polygon points="290,78 290,92 305,85" fill="#eab308"/>
+              <line x1="305" y1="78" x2="305" y2="92" stroke="#ffffff" stroke-width="2"/>
+
+              <line x1="250" y1="105" x2="290" y2="105" stroke="#10b981" stroke-width="2"/>
+              <polygon points="290,98 290,112 305,105" fill="#10b981"/>
+              <line x1="305" y1="98" x2="305" y2="112" stroke="#ffffff" stroke-width="2"/>
+
+              <line x1="305" y1="65" x2="350" y2="65" stroke="#94a3b8" stroke-width="2"/>
+              <line x1="305" y1="85" x2="350" y2="85" stroke="#94a3b8" stroke-width="2"/>
+              <line x1="305" y1="105" x2="350" y2="105" stroke="#94a3b8" stroke-width="2"/>
+              <line x1="350" y1="65" x2="350" y2="115" stroke="#94a3b8" stroke-width="2"/>
+              <text x="360" y="90" fill="#94a3b8" font-family="monospace" font-size="11">GND Arduino</text>
+            </svg>
+            <div class="schematic-caption">Gambar 6: Skematik Koneksi 3 Buah LED ke Pin Digital Arduino Uno</div>
+          </div>
+
+          <h4>4. Kode Program Sketch (Arduino IDE)</h4>
+          <div style="background: #080a0f; border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1.2rem; font-family: monospace; font-size: 0.9rem; overflow-x: auto; margin-bottom: 1.2rem;">
+            <span style="color: #64748b;">/* Proyek Praktik 06: Running LED TEI Kelas X */</span><br>
+            <span style="color: #ff8c00;">const int</span> pins[] = {8, 9, 10};<br><br>
+            <span style="color: #ff8c00;">void</span> <span style="color: #ffffff;">setup</span>() {<br>
+            &nbsp;&nbsp;<span style="color: #ff8c00;">for</span> (<span style="color: #ff8c00;">int</span> i = 0; i &lt; 3; i++) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ffb703;">pinMode</span>(pins[i], <span style="color: #ffd700;">OUTPUT</span>);<br>
+            &nbsp;&nbsp;}<br>
+            }<br><br>
+            <span style="color: #ff8c00;">void</span> <span style="color: #ffffff;">loop</span>() {<br>
+            &nbsp;&nbsp;<span style="color: #64748b;">// Menyalakan LED berurutan (Running LED)</span><br>
+            &nbsp;&nbsp;<span style="color: #ff8c00;">for</span> (<span style="color: #ff8c00;">int</span> i = 0; i &lt; 3; i++) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ffb703;">digitalWrite</span>(pins[i], <span style="color: #ffd700;">HIGH</span>);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ffb703;">delay</span>(300);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ffb703;">digitalWrite</span>(pins[i], <span style="color: #ffd700;">LOW</span>);<br>
+            &nbsp;&nbsp;}<br>
+            }
+          </div>
+
+          <h4>5. Langkah Kerja</h4>
+          <ol class="step-list">
+            <li class="step-item">Pasang ketiga LED pada breadboard dengan kaki Anoda menghadap kiri dan Katoda menghadap kanan.</li>
+            <li class="step-item">Hubungkan resistor 220 Ω secara seri pada masing-masing Anoda LED menuju Pin 8, 9, dan 10 pada Arduino.</li>
+            <li class="step-item">Hubungkan ketiga kaki Katoda LED ke pin GND Arduino.</li>
+            <li class="step-item">Hubungkan Arduino ke port USB laptop. Buka aplikasi Arduino IDE.</li>
+            <li class="step-item">Pilih menu <em>Tools &rarr; Board &rarr; Arduino Uno</em> dan tentukan nomor Port COM yang sesuai.</li>
+            <li class="step-item">Salin kode di atas, lalu klik tombol panah <strong>Upload</strong>.</li>
+          </ol>
+
+          <h4>6. Hasil yang Diharapkan</h4>
+          <p>
+            Setelah proses kompilasi dan upload sukses (tanda "Done uploading"), ketiga LED akan menyala bergantian satu per satu dari pin 8 ke 10 dengan jeda waktu 300 milidetik seperti lampu sinyal berjalan (running light).
+          </p>
+
+          <div class="callout callout-warning">
+            <div class="callout-title">Catatan Keselamatan (K3):</div>
+            Jangan meletakkan board Arduino di atas permukaan logam atau pelat tembaga yang dapat menyebabkan hubungan singkat solderan bawah board saat kabel USB terpasang!
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand-logo" style="margin-bottom: 0.8rem;">
+          <div class="brand-icon" style="width: 34px; height: 34px;">
+            <svg viewBox="0 0 24 24"><path d="M4 6h2v2H4V6zm0 5h2v2H4v-2zm0 5h2v2H4v-2zm14-10h2v2h-2V6zm0 5h2v2h-2v-2zm0 5h2v2h-2v-2zM6 4h2v2H6V4zm5 0h2v2h-2V4zm5 0h2v2h-2V4zM6 18h2v2H6v-2zm5 0h2v2h-2v-2zm5 0h2v2h-2v-2zM8 8h8v8H8V8z"/></svg>
+          </div>
+          <div class="brand-text">TEI <span>CLASS X</span></div>
+        </div>
+        <p>Laboratorium Praktikum Elektronika Industri Mandiri untuk Siswa SMK.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navigasi Halaman</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="materi.html">10 Modul Materi</a></li>
+          <li><a href="praktik.html">6 Proyek Praktik</a></li>
+          <li><a href="quiz.html">Uji Kuis 25 Soal</a></li>
+          <li><a href="tentang.html">Tentang Jurusan</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Daftar Proyek</h5>
+        <ul class="footer-links">
+          <li><a href="#praktik-1">Proyek 1: LED & Resistor</a></li>
+          <li><a href="#praktik-2">Proyek 2: Sensor Cahaya LDR</a></li>
+          <li><a href="#praktik-3">Proyek 3: Sensor Suhu NTC</a></li>
+          <li><a href="#praktik-4">Proyek 4: Tombol Pull-down</a></li>
+          <li><a href="#praktik-5">Proyek 5: Driver Saklar Relay</a></li>
+          <li><a href="#praktik-6">Proyek 6: Arduino Running LED</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Kemajuan Praktik</h5>
+        <div style="font-size: 0.88rem; color: var(--text-muted);">
+          Praktik Dicoba: <strong id="stat-praktik-count" style="color: var(--orange-primary);">0/6</strong>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 TEI CLASS X — Media Edukasi Teknik Elektronika Industri SMK. Pure HTML, CSS, & JS.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/progress.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

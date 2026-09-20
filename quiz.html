@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Evaluasi Kompetensi — TEI CLASS X</title>
+  <meta name="description" content="Kuis evaluasi interaktif 25 soal pilihan ganda Teknik Elektronika Industri Kelas 10. Pembahasan ilmiah lengkap dan penilaian otomatis.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="TEI CLASS X Beranda">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 6h2v2H4V6zm0 5h2v2H4v-2zm0 5h2v2H4v-2zm14-10h2v2h-2V6zm0 5h2v2h-2v-2zm0 5h2v2h-2v-2zM6 4h2v2H6V4zm5 0h2v2h-2V4zm5 0h2v2h-2V4zM6 18h2v2H6v-2zm5 0h2v2h-2v-2zm5 0h2v2h-2v-2zM8 8h8v8H8V8z"/></svg>
+        </div>
+        <div class="brand-text">TEI <span>CLASS X</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link">Beranda</a></li>
+          <li><a href="materi.html" class="nav-link">Materi</a></li>
+          <li><a href="praktik.html" class="nav-link">Praktik</a></li>
+          <li><a href="quiz.html" class="nav-link active">Quiz</a></li>
+          <li><a href="tentang.html" class="nav-link">Tentang</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-extra">
+        <div class="nav-progress-badge">
+          <span class="nav-progress-circle"></span>
+          <span id="nav-progress-text">0% Selesai</span>
+        </div>
+        <button class="hamburger" id="hamburger-btn" aria-label="Buka Menu" aria-expanded="false">
+          <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main>
+    <div class="container">
+      
+      <!-- QUIZ CARD CONTAINER -->
+      <div class="quiz-card" style="margin-top: 1.5rem;">
+        
+        <!-- QUIZ ACTIVE BOX -->
+        <div id="quiz-box">
+          <div class="quiz-header">
+            <div>
+              <span class="badge badge-orange" id="quiz-category">Kategori Soal</span>
+            </div>
+            <div>
+              <span style="font-size: 0.88rem; font-weight: 800; color: var(--orange-primary);" id="quiz-q-num">
+                Soal 1 dari 25
+              </span>
+            </div>
+          </div>
+
+          <!-- Progress Bar Soal -->
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quiz-progress-bar-fill" style="width: 4%;"></div>
+          </div>
+
+          <!-- Pertanyaan -->
+          <h2 class="question-text" id="quiz-question-text">
+            Memuat butir pertanyaan evaluasi TEI...
+          </h2>
+
+          <!-- Pilihan Jawaban A, B, C, D -->
+          <div class="quiz-options-list" id="quiz-options-container">
+            <!-- Diisi otomatis oleh quiz.js -->
+          </div>
+
+          <!-- Navigasi Bawah Kuis -->
+          <div class="quiz-footer">
+            <button type="button" class="btn btn-secondary" id="quiz-prev-btn" style="display: none;">
+              &larr; Soal Sebelumnya
+            </button>
+            <div style="margin-left: auto; display: flex; gap: 0.8rem;">
+              <button type="button" class="btn btn-primary" id="quiz-next-btn">
+                Soal Berikutnya &rarr;
+              </button>
+              <button type="button" class="btn btn-emerald" id="quiz-submit-btn" style="display: none;">
+                ✓ Kumpulkan & Periksa Skor
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUIZ RESULT & REVIEW CONTAINER (Hidden default) -->
+        <div id="quiz-result-container" style="display: none;">
+          <!-- Diisi dinamis oleh quiz.js saat kuis selesai -->
+        </div>
+
+      </div>
+
+      <!-- PETUNJUK PENGERJAAN KUIS -->
+      <div style="max-width: 820px; margin: 2.5rem auto 0; padding: 1.6rem; background: rgba(18, 21, 28, 0.75); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-muted);">
+        <h4 style="color: var(--orange-primary); font-size: 1.05rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          Petunjuk Ujian Mandiri TEI Kelas X:
+        </h4>
+        <ul style="padding-left: 1.3rem; margin-bottom: 0; line-height: 1.7;">
+          <li>Kuis terdiri dari 25 butir soal pilihan ganda standar asesmen SMK Kejuruan Elektronika Industri.</li>
+          <li>Klik salah satu opsi (A, B, C, atau D) untuk memilih jawaban Anda.</li>
+          <li>Gunakan tombol <strong>Soal Sebelumnya</strong> jika ingin meninjau kembali jawaban yang sudah Anda tentukan.</li>
+          <li>Setelah menekan tombol <strong>Kumpulkan & Periksa Skor</strong>, skor Anda akan langsung dikalkulasikan dan disimpan ke dalam penyimpanan browser.</li>
+          <li>Setiap soal akan disertai pembahasan ilmiah mendalam agar Anda dapat belajar dari kekeliruan konsep.</li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand-logo" style="margin-bottom: 0.8rem;">
+          <div class="brand-icon" style="width: 34px; height: 34px;">
+            <svg viewBox="0 0 24 24"><path d="M4 6h2v2H4V6zm0 5h2v2H4v-2zm0 5h2v2H4v-2zm14-10h2v2h-2V6zm0 5h2v2h-2v-2zm0 5h2v2h-2v-2zM6 4h2v2H6V4zm5 0h2v2h-2V4zm5 0h2v2h-2V4zM6 18h2v2H6v-2zm5 0h2v2h-2v-2zm5 0h2v2h-2v-2zM8 8h8v8H8V8z"/></svg>
+          </div>
+          <div class="brand-text">TEI <span>CLASS X</span></div>
+        </div>
+        <p>Evaluasi Penguasaan Kompetensi Keahlian Teknik Elektronika Industri SMK.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navigasi Halaman</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="materi.html">10 Modul Materi</a></li>
+          <li><a href="praktik.html">6 Proyek Praktik</a></li>
+          <li><a href="quiz.html">Uji Kuis 25 Soal</a></li>
+          <li><a href="tentang.html">Tentang Kurikulum</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Cakupan Ujian</h5>
+        <ul class="footer-links">
+          <li><span>Listrik Dasar & Hukum Ohm</span></li>
+          <li><span>Komponen Pasif & Aktif</span></li>
+          <li><span>Alat Ukur & Penyolderan K3</span></li>
+          <li><span>Elektronika Digital & Arduino</span></li>
+          <li><span>Sensorika & Otomasi Industri</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Skor Terakhir Anda</h5>
+        <div style="font-size: 1.6rem; font-weight: 900; color: var(--orange-primary);" id="stat-quiz-score">-</div>
+        <span style="font-size: 0.8rem; color: var(--text-dim);">Tersimpan di Browser LocalStorage</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 TEI CLASS X — Media Edukasi Teknik Elektronika Industri SMK. Pure HTML, CSS, & JS.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/progress.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
